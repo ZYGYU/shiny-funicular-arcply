@@ -1,0 +1,37 @@
+name: Download and Upload JSON Files
+
+on:
+  schedule:
+    - cron: '*/5 * * * *' 
+  workflow_dispatch: 
+
+jobs:
+  download-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Create result directory
+      run: mkdir -p result
+
+    - name: Download JSON files
+      env:
+        ID: ${{ secrets.ID }}
+        SP: ${{ secrets.SP }}
+        KD: ${{ secrets.KD }}
+        EV: ${{ secrets.EV }}
+      run: |
+        curl -o result/ID.json "$ID"
+        curl -o result/SP.json "$SP"
+        curl -o result/KD.json "$KD"
+        curl -o result/EV.json "$EV"
+
+    - name: Commit and push changes
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add result/
+        git commit -m "Update JSON files in result directory"
+        git push
