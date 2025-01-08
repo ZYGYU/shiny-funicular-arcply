@@ -24,10 +24,10 @@ jobs:
         EV: ${{ secrets.EV }}
       run: |
         echo "KD: $KD"
-        wget -O result/ID.json "$ID"
-        wget -O result/SP.json "$SP"
-        wget -O result/KD.json "$KD"
-        wget -O result/EV.json "$EV"
+        wget --quiet -O result/ID.json "$ID"
+        wget --quiet -O result/SP.json "$SP"
+        wget --quiet -O result/KD.json "$KD"
+        wget --quiet -O result/EV.json "$EV"
 
     - name: Commit and push changes
       run: |
