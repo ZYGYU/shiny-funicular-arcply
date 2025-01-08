@@ -22,12 +22,14 @@ jobs:
         SP: ${{ secrets.SP }}
         KD: ${{ secrets.KD }}
         EV: ${{ secrets.EV }}
+        MI: ${{ secrets.MI }}
       run: |
         echo "KD: $KD"
         wget --quiet -O result/ID.json "$ID"
         wget --quiet -O result/SP.json "$SP"
         wget --quiet -O result/KD.json "$KD"
         wget --quiet -O result/EV.json "$EV"
+        wget --quiet -O result/MI.json "$MI"
 
     - name: Remove base64 images from JSON files
       run: |
