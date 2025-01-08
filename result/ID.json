@@ -3,6 +3,23 @@
   "country": "ID",
   "info": [
     {
+      "id": "1069",
+      "name": "Carabao Cup [CH1]",
+      "tagline": "09 Jan 03:00 WIB - Tottenham Hotspur vs Liverpool",
+      "hls": "https://tvpull.careryun.com/live/ballbar_39190.m3u8",
+      "namespace": "Carabao Cup [CH1]",
+      "is_live": "t",
+      "is_movie": "f",
+      "subtitle": "",
+      "jenis": "dash-clearkey",
+      "premium": "f",
+      "alpha_2_code": "AA",
+      "country_name": "All Country",
+      "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiNUJ3NmIzVXlzdU9vS05sWUFTVEluUSIsImtpZCI6IndZdHFwem0rVEF0M1JnWDgrMTFyYUEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
+      "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
+      "header_license": "{\"x-data\":\"none\"}"
+    },
+    {
       "id": "16",
       "name": "ANTV",
       "tagline": "Makin Keren",
