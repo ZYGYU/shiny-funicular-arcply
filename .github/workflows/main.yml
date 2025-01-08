@@ -23,7 +23,8 @@ jobs:
         KD: ${{ secrets.KD }}
         EV: ${{ secrets.EV }}
       run: |
-        curl -o result/ID.json $ID
+        echo "KD_URL: $KD_URL"
+        curl -o result/ID.json "$ID"
         curl -o result/SP.json "$SP"
         curl -o result/KD.json "$KD"
         curl -o result/EV.json "$EV"
