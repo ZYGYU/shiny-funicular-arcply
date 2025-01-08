@@ -29,6 +29,12 @@ jobs:
         wget --quiet -O result/KD.json "$KD"
         wget --quiet -O result/EV.json "$EV"
 
+    - name: Remove base64 images from JSON files
+      run: |
+        for file in result/*.json; do
+          jq 'walk(if type == "object" and .image then del(.image) else . end)' "$file" > tmp.json && mv tmp.json "$file"
+        done
+
     - name: Commit and push changes
       run: |
         git config user.name "github-actions[bot]"
