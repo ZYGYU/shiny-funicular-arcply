@@ -71,6 +71,23 @@
       "header_license": "{\"x-data\":\"none\"}"
     },
     {
+      "id": "1425",
+      "name": "Mufasa: The Lion King (2024)",
+      "tagline": "Bioskop BitTV",
+      "hls": "https://lilac.k0s.net/stream/ZzRlLGVkLJLlZmL2ZmSvAmOzZ2ZkLmSxLGSwBGx1LwRjMwx0AGIwMQyzMQH0AGExAmDmZGAuAwH0Amt3AQtjZl5VYGDgZHyhA1L0HJq4MaEeK3S4pKEaYwSkLwEiHxybBHWHqKWVqzR1Exj1MwEeL0H2K1qUGUIhJy9vLHIgIyWLIz1aIxMvBIH0A3ILIUIBJzRkF2ECImV/AmywZTWwZwLmLGNkAwyuBQOyL2IvZmt0AmH3ZzHmLmL1AwZlZTDjZzR1LzD1LzH4MwVmMTLlMzRkAQN2MzZjZv5xFwyWn3HkBQIhD0SdGHMkoJA1G0gaYac4FRI5JSuDZKN0IGWsnxxjDHu5pwHmHyqvLyIvnSqaozj0BKEOoHMWLzkGF2SlDzITEKWWMKqsFTAXF2czZwH.m3u8",
+      "namespace": "Mufasa: The Lion King (2024)",
+      "is_live": "t",
+      "is_movie": "t",
+      "subtitle": "",
+      "jenis": "hls",
+      "premium": "f",
+      "alpha_2_code": "MI",
+      "country_name": "Movies",
+      "url_license": "8ab47741930c476780515f9a00decb0a:7ab4b9ae5a48aa526e511a913b832769",
+      "header_iptv": "{\"Referer\":\"https://199.87.210.226/\",\"Origin\":\"https://199.87.210.226\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0\",\"Accept-Encoding\":\"gzip, deflate, br, zstd\",\"Priority\":\"u=4\",\"TE\":\"trailers\",\"Pragma\":\"no-cache\",\"Accept-Language\":\"en-US,en;q=0.5\",\"Cache-Control\":\"no-cache\",\"Connection\":\"keep-alive\"}",
+      "header_license": "{\"x-data\":\"none\"}"
+    },
+    {
       "id": "1424",
       "name": "Sekawan Limo (2024)",
       "tagline": "Spesial Tahun Baru",
