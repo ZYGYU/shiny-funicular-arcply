@@ -154,6 +154,23 @@
       "url_license": "https://mrpw.ptmnc01.verspective.net/?deviceId=NDIzMDJhZmUtYWRjMi0zNGJkLTkyN2EtYmE1ZDFlZWIwODEz",
       "header_iptv": "{\"Referer\":\"https://useetvwv.visionplus.id/\",\"Origin\":\"https://useetvwv.visionplus.id\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
+    },
+    {
+      "id": "1474",
+      "name": "Supercopa de Espana",
+      "tagline": "10 Jan 02:00 WIB - Real Madrid vs Mallorca",
+      "hls": "https://tvpull.careryun.com/live/ballbar_36570.m3u8",
+      "namespace": "Supercopa de Espana",
+      "is_live": "t",
+      "is_movie": "f",
+      "subtitle": "",
+      "jenis": "hls",
+      "premium": "f",
+      "alpha_2_code": "EV",
+      "country_name": "Events",
+      "url_license": "https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1730302219/ei/q_whZ7WKBZiNjuMP7c7RqQE/ip/2a09%3Abac5%3A55fb%3A18c8%3A0%3A0%3A278%3A98/id/jrO9M_-RO-M.1/source/yt_live_broadcast/requiressl/yes/xpc/EgVo2aDSNQ%3D%3D/hfr/1/playlist_duration/30/manifest_duration/30/maxh/4320/maudio/1/siu/1/spc/qtApATSeRwO8ZnG4TbTIAjmbEf9xHRse9aY5jZdcxsM6VvKVvJVdwoocGW9fW_uoija8oVrrIDJR/vprv/1/go/1/rqh/5/pacing/0/nvgoi/1/keepalive/yes/fexp/51312688%2C51326932%2C51331020/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaxh%2Cmaudio%2Csiu%2Cspc%2Cvprv%2Cgo%2Crqh%2Citag%2Cplaylist_type/sig/AJfQdSswRAIgDJDpLJT5kEOyoWwJwNb0d6nJDep5n5tD4W7MroPk_W0CIBndk9pPoeTy_wCAtlEAT9Nl46WI1Xw9olBVCYDLOE4H/file/index.m3u8",
+      "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0\"}",
+      "header_license": "{\"x-data\":\"none\"}"
     }
   ],
   "countrylist": [
