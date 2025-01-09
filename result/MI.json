@@ -3,23 +3,6 @@
   "country": "MI",
   "info": [
     {
-      "id": "1425",
-      "name": "Mufasa: The Lion King (2024)",
-      "tagline": "Bioskop BitTV",
-      "hls": "https://jeniusplay.com/cdn/hls/59b53d5372269b51959bd0ae33cf97b4/master.m3u8?md5=zCzhL921hpoVUoVC1TDGZA&expires=1736437921",
-      "namespace": "Mufasa: The Lion King (2024)",
-      "is_live": "t",
-      "is_movie": "t",
-      "subtitle": "",
-      "jenis": "hls",
-      "premium": "f",
-      "alpha_2_code": "MI",
-      "country_name": "Movies",
-      "url_license": "8ab47741930c476780515f9a00decb0a:7ab4b9ae5a48aa526e511a913b832769",
-      "header_iptv": "{\"Referer\":\"https://199.87.210.226/\",\"Origin\":\"https://199.87.210.226\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0\",\"Accept-Encoding\":\"gzip, deflate, br, zstd\",\"Priority\":\"u=4\",\"TE\":\"trailers\",\"Pragma\":\"no-cache\",\"Accept-Language\":\"en-US,en;q=0.5\",\"Cache-Control\":\"no-cache\",\"Connection\":\"keep-alive\"}",
-      "header_license": "{\"x-data\":\"none\"}"
-    },
-    {
       "id": "1461",
       "name": "Kang Mak (from Pee Mak) (2024)",
       "tagline": "Spesial Tahun Baru",
@@ -85,23 +68,6 @@
       "country_name": "Movies",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"https://172.96.161.72/\",\"Origin\":\"https://172.96.161.72\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0\"}",
-      "header_license": "{\"x-data\":\"none\"}"
-    },
-    {
-      "id": "1480",
-      "name": "Sonic the Hedgehog 3 (2024)",
-      "tagline": "Bioskop BitTV",
-      "hls": "https://lilac.k0s.net/stream/variant/AwtmZQqzAQEzZwqxAJV1MwVmZwRmBTL1LzV2AQOxMQNkLmyzZJRjLmZ4ZmD3ZQuwLGx1MzVjBTWwLGAuMwN2Ll4jpRcepSb1D09bZKcAo2WKpRf0BRMEYzuJFKpjAmyAMKZlrRkJMaMBFmABE3ScZwOLqxEUFRx3DJWYMID1qxkXJIMZoRIQD051pwq6GypgG09JBUWKn1p/MzVlZwuzAwEuAzL0AJL4MJEyZzDlAJZmZmL3AQuzZTEvATRlLzSzZQOwMTAyLJVjAGOwAGZmLmLkZmL2AmHjZv5gpxWvEySgAHk6oSWeI21iLzI0FGyaYzyhMx9Knzb0qUcCETH2BRR4MT1GZIR/MwZ0LwqzMGxlLzD4LmZjLJWyLJSyAwDjMQDkMQIvZGyzBTWuLmD4Z2H3MQZ4BQZ4Zwt1AwH1LGyzAmR3AGV4BP5vH1cQLmImHzSapxIHpy96qSE6nR1aYyOTBKcwBKcJZ2kxMacdqxqGF1ASqRAWBTAmI3ciq3S0FHZlJIIkBRuRrwWMDxyToIIGoJMzHF1WoTyCnIIeBIR.m3u8",
-      "namespace": "Sonic the Hedgehog 3 (2024)",
-      "is_live": "t",
-      "is_movie": "t",
-      "subtitle": "",
-      "jenis": "hls",
-      "premium": "f",
-      "alpha_2_code": "MI",
-      "country_name": "Movies",
-      "url_license": "8ab47741930c476780515f9a00decb0a:7ab4b9ae5a48aa526e511a913b832769",
-      "header_iptv": "{\"Referer\":\"https://199.87.210.226/\",\"Origin\":\"https://199.87.210.226\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0\",\"Accept-Encoding\":\"gzip, deflate, br, zstd\",\"Priority\":\"u=4\",\"TE\":\"trailers\",\"Pragma\":\"no-cache\",\"Accept-Language\":\"en-US,en;q=0.5\",\"Cache-Control\":\"no-cache\",\"Connection\":\"keep-alive\"}",
       "header_license": "{\"x-data\":\"none\"}"
     },
     {
