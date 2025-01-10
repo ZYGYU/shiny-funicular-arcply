@@ -3,6 +3,42 @@
   "country": "SP",
   "info": [
     {
+      "id": "1040",
+      "name": "Eredivisie [CH1]",
+      "tagline": "11 Jan 02:00 WIB - Fortuna Sittard vs Go Ahead Eagles",
+      "hls": "https://tvpull.careryun.com/live/ballbar_22760.m3u8",
+      "namespace": "Eredivisie [CH1]",
+      "is_live": "t",
+      "is_movie": "f",
+      "subtitle": "",
+      "jenis": "hls",
+      "premium": "f",
+      "alpha_2_code": "AA",
+      "country_name": "All Country",
+      "t_stamp": "1736535600",
+      "url_license": "3e999e38253834baa63881ea451f2839:99b88d9cde1d8986decbc5985da87187",
+      "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
+      "header_license": "{\"x-data\":\"none\"}"
+    },
+    {
+      "id": "916",
+      "name": "Serie-A Italy [CH1]",
+      "tagline": "11 Jan 02:45 WIB - Lazio vs Como",
+      "hls": "https://uselector.cdn.intigral-ott.net/ADSP1/ADSP1.isml/manifest.mpd",
+      "namespace": "Serie-A Italy [CH1]",
+      "is_live": "t",
+      "is_movie": "f",
+      "subtitle": "",
+      "jenis": "dash-clearkey",
+      "premium": "f",
+      "alpha_2_code": "AA",
+      "country_name": "All Country",
+      "t_stamp": "1736538300",
+      "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiTEl0eG1GWTFKK1VrMW1Zb3dKTHZIdyIsImtpZCI6IjYxbzZTUFBoa2FBT09zSGkxSERFa1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
+      "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
+      "header_license": "{\"x-data\":\"none\"}"
+    },
+    {
       "id": "1471",
       "name": "ESPN-AR 1",
       "tagline": "Online",
@@ -15,6 +51,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "1736262000",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoicytUblN1SUlDeE4rYUx2UTc0cCtCUSIsImtpZCI6Inl3QlBzUUM5a3ZJM2sxWW9rZU1qYXcifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -32,6 +69,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "1736262000",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoibWJpTm5ONGRpWWJleThXWVhhaHhodyIsImtpZCI6IlBwbWVPQ1U0TkxxbU9JSHFSUjhvT1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -49,6 +87,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "1736262000",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoibWJpTm5ONGRpWWJleThXWVhhaHhodyIsImtpZCI6IlBwbWVPQ1U0TkxxbU9JSHFSUjhvT1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -66,6 +105,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "1736262000",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoibWJpTm5ONGRpWWJleThXWVhhaHhodyIsImtpZCI6IlBwbWVPQ1U0TkxxbU9JSHFSUjhvT1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -83,6 +123,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiNUJ3NmIzVXlzdU9vS05sWUFTVEluUSIsImtpZCI6IndZdHFwem0rVEF0M1JnWDgrMTFyYUEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -100,6 +141,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiNUJ3NmIzVXlzdU9vS05sWUFTVEluUSIsImtpZCI6IndZdHFwem0rVEF0M1JnWDgrMTFyYUEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -117,6 +159,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiNUJ3NmIzVXlzdU9vS05sWUFTVEluUSIsImtpZCI6IndZdHFwem0rVEF0M1JnWDgrMTFyYUEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -134,6 +177,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiNUJ3NmIzVXlzdU9vS05sWUFTVEluUSIsImtpZCI6IndZdHFwem0rVEF0M1JnWDgrMTFyYUEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -151,6 +195,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiNUJ3NmIzVXlzdU9vS05sWUFTVEluUSIsImtpZCI6IndZdHFwem0rVEF0M1JnWDgrMTFyYUEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -168,6 +213,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiNUJ3NmIzVXlzdU9vS05sWUFTVEluUSIsImtpZCI6IndZdHFwem0rVEF0M1JnWDgrMTFyYUEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -185,6 +231,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiNUJ3NmIzVXlzdU9vS05sWUFTVEluUSIsImtpZCI6IndZdHFwem0rVEF0M1JnWDgrMTFyYUEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -202,6 +249,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiNUJ3NmIzVXlzdU9vS05sWUFTVEluUSIsImtpZCI6IndZdHFwem0rVEF0M1JnWDgrMTFyYUEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -219,6 +267,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiNUJ3NmIzVXlzdU9vS05sWUFTVEluUSIsImtpZCI6IndZdHFwem0rVEF0M1JnWDgrMTFyYUEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -236,6 +285,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "57d2ac9210cfbca3596cc679a01c8b29:d5e35c0f39c76adf24853d7ea18c71e7",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -253,6 +303,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "57d2ac9210cfbca3596cc679a01c8b29:d5e35c0f39c76adf24853d7ea18c71e7",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -270,6 +321,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "57d2ac9210cfbca3596cc679a01c8b29:d5e35c0f39c76adf24853d7ea18c71e7",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -287,6 +339,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "57d2ac9210cfbca3596cc679a01c8b29:d5e35c0f39c76adf24853d7ea18c71e7",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -304,6 +357,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "57d2ac9210cfbca3596cc679a01c8b29:d5e35c0f39c76adf24853d7ea18c71e7",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -321,6 +375,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "57d2ac9210cfbca3596cc679a01c8b29:d5e35c0f39c76adf24853d7ea18c71e7",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -338,6 +393,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "57d2ac9210cfbca3596cc679a01c8b29:d5e35c0f39c76adf24853d7ea18c71e7",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -355,6 +411,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "57d2ac9210cfbca3596cc679a01c8b29:d5e35c0f39c76adf24853d7ea18c71e7",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -372,6 +429,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "57d2ac9210cfbca3596cc679a01c8b29:d5e35c0f39c76adf24853d7ea18c71e7",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -389,6 +447,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "57d2ac9210cfbca3596cc679a01c8b29:d5e35c0f39c76adf24853d7ea18c71e7",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -406,6 +465,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "57d2ac9210cfbca3596cc679a01c8b29:d5e35c0f39c76adf24853d7ea18c71e7",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -423,6 +483,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "57d2ac9210cfbca3596cc679a01c8b29:d5e35c0f39c76adf24853d7ea18c71e7",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -440,6 +501,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "57d2ac9210cfbca3596cc679a01c8b29:d5e35c0f39c76adf24853d7ea18c71e7",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -457,6 +519,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiMWVOY0R6bkhhdDhraFQxK29ZeHg1dyIsImtpZCI6IlY5S3NraERQdktOWmJNWjVvQnlMS1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://visionplus.id/\",\"Origin\":\"https://visionplus.id\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -474,6 +537,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiMWVOY0R6bkhhdDhraFQxK29ZeHg1dyIsImtpZCI6IlY5S3NraERQdktOWmJNWjVvQnlMS1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://visionplus.id/\",\"Origin\":\"https://visionplus.id\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -491,6 +555,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiMWVOY0R6bkhhdDhraFQxK29ZeHg1dyIsImtpZCI6IlY5S3NraERQdktOWmJNWjVvQnlMS1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://visionplus.id/\",\"Origin\":\"https://visionplus.id\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -508,6 +573,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiMWVOY0R6bkhhdDhraFQxK29ZeHg1dyIsImtpZCI6IlY5S3NraERQdktOWmJNWjVvQnlMS1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://visionplus.id/\",\"Origin\":\"https://visionplus.id\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -525,6 +591,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiMWVOY0R6bkhhdDhraFQxK29ZeHg1dyIsImtpZCI6IlY5S3NraERQdktOWmJNWjVvQnlMS1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://visionplus.id/\",\"Origin\":\"https://visionplus.id\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -542,6 +609,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoidi9HYXNLVWM4VTZFZzRteFVwRS8wQSIsImtpZCI6IlJOMmMwM0N3aW9hT3JSRmY2RTdQM2cifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -559,6 +627,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiOC9CaDN0bTNEb0ZnV1ExWUF1emFiUSIsImtpZCI6IkRxdGFQejQ3UzZYVUxVREtNTkYxY1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -576,6 +645,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoidi9HYXNLVWM4VTZFZzRteFVwRS8wQSIsImtpZCI6IlJOMmMwM0N3aW9hT3JSRmY2RTdQM2cifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://starlive.pages.dev/\",\"Origin\":\"https://starlive.pages.dev\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -593,6 +663,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiOC9CaDN0bTNEb0ZnV1ExWUF1emFiUSIsImtpZCI6IkRxdGFQejQ3UzZYVUxVREtNTkYxY1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://starlive.pages.dev/\",\"Origin\":\"https://starlive.pages.dev\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -610,6 +681,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiaTBpeXl5ZER1UjFmSU04bUlnWi9PZyIsImtpZCI6IlI4QS9LZkJIUjlLaW1NQ3RZL095d1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Postman\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -627,6 +699,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiaHlidmZxOWJuYzRWKzJxcCtBdlZQdyIsImtpZCI6Ikw3MnFPK29OQXlPdUFSc3hqUjIzRmcifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -644,6 +717,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiMVBCYzVXeFNNYmZOOVRSVnZxV0dJUSIsImtpZCI6ImlEYjdCTll0eGt5ZmlqbnZoa0RWNncifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -661,6 +735,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiVjJsekQvdmNTeS9ZbEZrcDJhemdZdyIsImtpZCI6IkVjakJ3dThEaGM4ZVpOUkx1Y09qbFEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -678,6 +753,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiZzROeGhWS2NERUJJK0JPR3d0TmtKZyIsImtpZCI6Im56SjlKTVp2dllUaFdyWEo2dGZIcEEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -695,6 +771,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiNUtJMW13VldNNW54MmEzODVrRnlTZyIsImtpZCI6ImFXUnJkVjh4TURBd01EQXdNREF3TUEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -712,6 +789,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiZnVsUWF4TklCSkhYbTNIQVlxdFRaZyIsImtpZCI6IlRUZ0dDL1FiUENuZkRzbFE3T2ExMmcifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://useetvwv.visionplus.id/\",\"Origin\":\"https://useetvwv.visionplus.id\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
       "header_license": "{\"x-data\":\"none\",\"widevine\":\"https://mrpw.ptmnc01.verspective.net/?deviceId=NDIzMDJhZmUtYWRjMi0zNGJkLTkyN2EtYmE1ZDFlZWIwODEz\"}"
@@ -729,6 +807,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiMTJuWnJpT0wzVUpQaTgzTnlhT0FIdyIsImtpZCI6IlV4eHRVT1BwK2JwbVJHOWlUMGtpaVEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Host\":\"cempedak-live-cdn.mncnow.id\",\"Referer\":\"https://useetvwv.visionplus.id/\",\"Origin\":\"https://useetvwv.visionplus.id\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36\"}",
       "header_license": "{\"x-data\":\"none\",\"widevine\":\"https://mrpw.ptmnc01.verspective.net/?deviceId=NDIzMDJhZmUtYWRjMi0zNGJkLTkyN2EtYmE1ZDFlZWIwODEz\"}"
@@ -746,6 +825,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiaEQ0aWlyRUo2YXBzU0NMdVN0QmRmUSIsImtpZCI6IlJmN0pIT0h4bTJzZk1kYWR6NnIyelEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Host\":\"cempedak-live-cdn.mncnow.id\",\"Referer\":\"https://useetvwv.visionplus.id/\",\"Origin\":\"https://useetvwv.visionplus.id\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36\"}",
       "header_license": "{\"x-data\":\"none\",\"widevine\":\"https://mrpw.ptmnc01.verspective.net/?deviceId=NDIzMDJhZmUtYWRjMi0zNGJkLTkyN2EtYmE1ZDFlZWIwODEz\"}"
@@ -763,6 +843,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "https://cors-proxy.elfsight.com/da-d50d12b5.online.meo.pt/wp/cdn-er-vspp-cvl2.online.meo.pt/shls/LIVE$SPORTTV2_HD/index.m3u8/S!d2EGSU9TX0dhEgZU.v...wEWDJ8_/Level(5242880)",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -780,6 +861,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "https://da-d50d12b5.online.meo.pt/wp/cdn-er-vspp-cvl2.online.meo.pt/shls/LIVE$SPORTTV3_HD/index.m3u8/S!d2EGSU9TX0dhEgZU.v...wEWDJ8_/Level(5242880)",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -797,6 +879,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiMWVOY0R6bkhhdDhraFQxK29ZeHg1dyIsImtpZCI6IlY5S3NraERQdktOWmJNWjVvQnlMS1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://www.visionplus.id/\",\"Origin\":\"https://www.visionplus.id\",\"User-Agent\":\"PostmanRuntime/7.42.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -814,6 +897,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiMWVOY0R6bkhhdDhraFQxK29ZeHg1dyIsImtpZCI6IlY5S3NraERQdktOWmJNWjVvQnlMS1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://www.visionplus.id/\",\"Origin\":\"https://www.visionplus.id\",\"User-Agent\":\"PostmanRuntime/7.42.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -831,6 +915,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiQThGK0tKRWZjU0lheThDeEg1QUVBUSIsImtpZCI6IjdMeWViK2F4UmUrMlpZKzF6M1FuK0EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\",\"old\":\"https://ssc-extra1-ak.akamaized.net/out/v1/647c58693f1d46af92bd7e69f17912cb/index.mpd\"}"
@@ -848,6 +933,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiendkUC9TWkd5Y0w0VVR0SCtsZThNQSIsImtpZCI6IlRZa2ttOVRLVHJ5ZWNFUXlaZmxRZlEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\",\"old\":\"https://ssc-extra2-ak.akamaized.net/out/v1/8b70de2b70d447ba8a7450ba90926a2d/index.mpd\"}"
@@ -865,6 +951,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiMHdCdTVwNTNzbGs1Y282L01OTVlDZyIsImtpZCI6Im1NL1cvVWdTU1greVRjZGZkVVh5N2cifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\",\"old\":\"https://ssc-extra3-ak.akamaized.net/out/v1/8f1c6c3f05ef4284a64b342891bd85ae/index.mpd\"}"
@@ -882,6 +969,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiVlFjbjNreVc3eDdQK0hTUVZKTllEdyIsImtpZCI6IjJFd3lYemFCVHptNzVaQ0FKeXNRd3cifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://ssc.tv/\",\"Origin\":\"https://ssc.tv\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\",\"old\":\"https://ssc1-ak.akamaized.net/out/v1/c696e4819b55414388a1a487e8a45ca1/index.mpd\"}"
@@ -899,6 +987,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoidGR6M0lhdFNLdmtxblR2d3ZWVzFsZyIsImtpZCI6Imk4L0ZVMW5pUzlldEhGVmdxVzNkUEEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -916,6 +1005,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiWGhVRDh6bUxOUFVKbVRQKzJyaEg3dyIsImtpZCI6ImZlWGRDSzJBUWRXR3d2RnN6SlNRb1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -933,6 +1023,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoidjRkVys3aG03aTFjY0J3aWlkMk40dyIsImtpZCI6IlhHY3ZhNFdwUmppSExRSVU5NEJ1MUEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -950,6 +1041,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoicmNDTzRjSUtjMGx5cFZ5YTY3MFlpQSIsImtpZCI6InlJdFJLeGVyVDJ5d25yRC9TaEJXN1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -967,6 +1059,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiWTZ4bUxkNHhEUHRNeHZtME96UVpiUSIsImtpZCI6InJpYUVXOU13T0tuQWQwb0pnUUJ5bEEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -984,6 +1077,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiR3F6Z1gxalk3ZStXbC8xU3l3bjBRUSIsImtpZCI6ImJSY0lzWVhHeE5lemRnQlNESHpKUEEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1001,6 +1095,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiaHFIdGJwYktxNDZ4QUovbE1OTFBUdyIsImtpZCI6IlRwazZxTUh5bGZpNVRvNmViMjBML2cifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1018,6 +1113,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoibHNYdmFVZVhNcTV6VDVZblNNR1hLUSIsImtpZCI6IjR4cGFnY3IvWFFmcUpCR2xjZnd1V1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1035,6 +1131,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiTnU1QTVZbEl5aFhqeXJxTlI3anpTdyIsImtpZCI6IllNRFp0QlIxNEIyMC83a2UxVmY3ekEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1052,6 +1149,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "cbb673fb120882354735ed57eeb05b4c:fe003f7aeec40eb65d20b14edfda2a86",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1069,6 +1167,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiME13Z2doTXJRd3JWcUx4UE1jbTNjZyIsImtpZCI6ImtiOHRnYm5oTndHc1pua1ZaQkVodUEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1086,6 +1185,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiNnVVYUhqa0VFa2xqQjB5L1F5eDhqZyIsImtpZCI6IkZyOXkzQ0owUFpLY1F4amhrMENEY3cifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1103,6 +1203,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiVjR3aU1jVW14ZW5yUVZRUjQyaHh2dyIsImtpZCI6IkMrUFZBOXVoUDhtcHlLMUxpZldaNWcifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1120,6 +1221,7 @@
       "premium": "t",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiNnVVYUhqa0VFa2xqQjB5L1F5eDhqZyIsImtpZCI6IkZyOXkzQ0owUFpLY1F4amhrMENEY3cifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1137,6 +1239,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"none\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1154,6 +1257,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"none\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1171,6 +1275,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiNUJ3NmIzVXlzdU9vS05sWUFTVEluUSIsImtpZCI6IndZdHFwem0rVEF0M1JnWDgrMTFyYUEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1188,6 +1293,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "https://lebo.huminbird.cn/live/ballbar_29030.m3u8",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1205,6 +1311,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "https://lebo.huminbird.cn/live/ballbar_29030.m3u8",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1222,6 +1329,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "https://live.olelive.com:6443/live/CCTV5HD/hls.m3u8",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1239,6 +1347,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "https://node3.olelive.com:6443/live/CCTV5PHD/hls.m3u8",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1256,6 +1365,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoidldJckRtRUNsZDQ3Qzh5NFVNeXFxZyIsImtpZCI6IkVHRytFdE1ESkhRbTdDWG9OcHNtUncifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1273,6 +1383,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiZXgrRjl1Z1FXVWM3RVV3V29seUNtZyIsImtpZCI6IlE5SERzbElIL3ppeUxNL2hmVEFqWncifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1290,6 +1401,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"none\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1307,6 +1419,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"none\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1324,6 +1437,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"none\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1341,6 +1455,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "237be8ca9383755e9f5784dd23f545eb:15a723773c3b3cbce295c0aed0bc71c3",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1358,6 +1473,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "15382879a9bcfa6f1a04a86d5b4324e9:664241133368ab039dc1fb15206ba54b",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1375,6 +1491,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "5eaddccd893a47ac8b65f9b31963a3ae:881afa67ea57b41c1822d745d67559e6",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1392,6 +1509,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "57e48b99f3f6d4f13f5c5afdcca084ca:29379a5e2d3405fad2f5d9cbe92586c3",
       "header_iptv": "{\"Referer\":\"https://veda30wz.superargo77.cfd/\",\"Origin\":\"https://veda30wz.superargo77.cfd\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1409,6 +1527,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiREpKVmJLRkxsZk5ubVRjUTU4KzhsQSIsImtpZCI6ImJRaXlaYVpqbmpMYWZJZ05WSkhqMGcifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1426,6 +1545,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1443,6 +1563,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1460,6 +1581,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1477,6 +1599,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist_b900000.m3u8",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1494,6 +1617,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "https://play.accolamedia.id/accola/psj.stream/playlist.m3u8?checkedby:iptvcat.com",
       "header_iptv": "{\"Referer\":\"https://veda30wz.superargo77.cfd/\",\"Origin\":\"https://veda30wz.superargo77.cfd\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1511,6 +1635,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"none\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1528,6 +1653,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiTi8zdWkyN3ZYSllBSG94dnhIdjhDQSIsImtpZCI6ImlySXpKRUtGVG1Ld0FZN3NQdVdFaEEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1545,6 +1671,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"https://www.youdooball.com/\",\"Origin\":\"https://www.youdooball.com\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1562,6 +1689,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "https://www.livedoomovies.com:4432/02_PremierHD2_480p/chunklist.m3u8",
       "header_iptv": "{\"Referer\":\"https://www.youdooball.com/\",\"Origin\":\"https://www.youdooball.com\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1579,6 +1707,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"https://www.youdooball.com/\",\"Origin\":\"https://www.youdooball.com\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1596,6 +1725,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"none\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1613,6 +1743,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"none\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1630,6 +1761,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiMHZrdmEzN2NtaG9GMDVPNkRDRHZuZyIsImtpZCI6IkFDQkd5YVNibXJITnRtRnI3RjBtd3cifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1647,6 +1779,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -1664,6 +1797,7 @@
       "premium": "f",
       "alpha_2_code": "SP",
       "country_name": "Sports TV",
+      "t_stamp": "none",
       "url_license": "https://xoilac.bittv.workers.dev/livecdn/channel5.m3u8?auth_key=3000001730996753-0-0-ca5e396b84ea3adedbac1cb48fec3def",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
