@@ -3,6 +3,42 @@
   "country": "KD",
   "info": [
     {
+      "id": "1040",
+      "name": "Eredivisie [CH1]",
+      "tagline": "11 Jan 02:00 WIB - Fortuna Sittard vs Go Ahead Eagles",
+      "hls": "https://tvpull.careryun.com/live/ballbar_22760.m3u8",
+      "namespace": "Eredivisie [CH1]",
+      "is_live": "t",
+      "is_movie": "f",
+      "subtitle": "",
+      "jenis": "hls",
+      "premium": "f",
+      "alpha_2_code": "AA",
+      "country_name": "All Country",
+      "t_stamp": "1736535600",
+      "url_license": "3e999e38253834baa63881ea451f2839:99b88d9cde1d8986decbc5985da87187",
+      "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
+      "header_license": "{\"x-data\":\"none\"}"
+    },
+    {
+      "id": "916",
+      "name": "Serie-A Italy [CH1]",
+      "tagline": "11 Jan 02:45 WIB - Lazio vs Como",
+      "hls": "https://uselector.cdn.intigral-ott.net/ADSP1/ADSP1.isml/manifest.mpd",
+      "namespace": "Serie-A Italy [CH1]",
+      "is_live": "t",
+      "is_movie": "f",
+      "subtitle": "",
+      "jenis": "dash-clearkey",
+      "premium": "f",
+      "alpha_2_code": "AA",
+      "country_name": "All Country",
+      "t_stamp": "1736538300",
+      "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiTEl0eG1GWTFKK1VrMW1Zb3dKTHZIdyIsImtpZCI6IjYxbzZTUFBoa2FBT09zSGkxSERFa1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
+      "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
+      "header_license": "{\"x-data\":\"none\"}"
+    },
+    {
       "id": "1026",
       "name": "BabyTV HD",
       "tagline": "BabyTV HD",
@@ -15,6 +51,7 @@
       "premium": "f",
       "alpha_2_code": "KD",
       "country_name": "Kids",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiQXFBU2d2ZCszd1BwWk9jVCswUitrdyIsImtpZCI6Ikw4WXJvWXRFM09nb3BmdUtJVDF1V3cifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://useetvwv.visionplus.id/\",\"Origin\":\"https://useetvwv.visionplus.id\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -32,6 +69,7 @@
       "premium": "f",
       "alpha_2_code": "KD",
       "country_name": "Kids",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiWldCeDI5Lzcya1FLYjk1UDJsYmVJUSIsImtpZCI6IkV2N2lsekVmUzZ1Uk5uME9uRG9LTHcifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://www.vidio.com/\",\"Origin\":\"https://www.vidio.com\",\"User-Agent\":\"ExoPlayerDemo/2.15.1 (Linux; Android 13) ExoPlayerLib/2.15.1\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -49,6 +87,7 @@
       "premium": "f",
       "alpha_2_code": "KD",
       "country_name": "Kids",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiMFdHeDl6ZmlydWxRRVVsQWJJcStuZyIsImtpZCI6IjYrWVpDano3dnRUc05PVFp4Nk1PSGcifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://visionplus.id/\",\"Origin\":\"https://visionplus.id\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -66,6 +105,7 @@
       "premium": "f",
       "alpha_2_code": "KD",
       "country_name": "Kids",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoib3oxSmFIWFFSUkNwc3hGcnBScm1YUSIsImtpZCI6IjhJd3d0KzRSUTVtM0xuZXd3SmtrU3cifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://www.vidio.com/\",\"Origin\":\"https://www.vidio.com\",\"User-Agent\":\"ExoPlayerDemo/2.15.1 (Linux; Android 13) ExoPlayerLib/2.15.1\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -83,6 +123,7 @@
       "premium": "f",
       "alpha_2_code": "KD",
       "country_name": "Kids",
+      "t_stamp": "none",
       "url_license": "https://drmid.layarkacatv.me/",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36\"}",
       "header_license": "{\"dt-custom-data\":\"eyJ1c2VySWQiOiJyZWFjdC1qdy1wbGF5ZXIiLCJzZXNzaW9uSWQiOiIxMjM0NTY3ODkiLCJtZXJjaGFudCI6ImdpaXRkX3RyYW5zdmlzaW9uIn0=\"}"
@@ -100,6 +141,7 @@
       "premium": "f",
       "alpha_2_code": "KD",
       "country_name": "Kids",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"none\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -117,6 +159,7 @@
       "premium": "f",
       "alpha_2_code": "KD",
       "country_name": "Kids",
+      "t_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"https://mhdmax.com/\",\"Origin\":\"https://mhdmax.com\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -134,6 +177,7 @@
       "premium": "f",
       "alpha_2_code": "KD",
       "country_name": "Kids",
+      "t_stamp": "none",
       "url_license": "69646b755f3130303030303030303030:e4a2359b05563399f1d9adfce641724a",
       "header_iptv": "{\"Referer\":\"https://www.indihometv.com/\",\"Origin\":\"https://www.indihometv.com\",\"User-Agent\":\"Mozilla/5.0 (Linux; Android 8.0.0;) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.90 Mobile Safari/537.36\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -151,6 +195,7 @@
       "premium": "f",
       "alpha_2_code": "KD",
       "country_name": "Kids",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiVDNCY3FUUzZQdlZSUCtwaGpVK1RqUSIsImtpZCI6Im90MkdUOGxabU8vVktYbmw5ekxnS1EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://www.mncvision.id/\",\"Origin\":\"https://www.mncvision.id\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0\"}",
       "header_license": "{\"x-data\":\"none\",\"widevine\":\"https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh\"}"
@@ -168,6 +213,7 @@
       "premium": "f",
       "alpha_2_code": "KD",
       "country_name": "Kids",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiVnFRT1dLelZtV1hvWlpSOTF4a1FqUSIsImtpZCI6ImVGQWtXWWlDM0hVV1VzNml2T1JMamcifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -185,6 +231,7 @@
       "premium": "f",
       "alpha_2_code": "KD",
       "country_name": "Kids",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoiaWdmdlJiU2hpWFB2RXZqYVNDM093QSIsImtpZCI6Ijl4eWduMWZxQ2VKKzVqMTlIdzBPTVEifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"https://www.visionplus.id/\",\"Origin\":\"https://www.visionplus.id\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -202,6 +249,7 @@
       "premium": "f",
       "alpha_2_code": "KD",
       "country_name": "Kids",
+      "t_stamp": "none",
       "url_license": "eyJrZXlzIjpbeyJrdHkiOiJvY3QiLCJrIjoidGlKa1NibnRVR1pVTG0xcTFleXpSZyIsImtpZCI6IllTNjNFZCswUlBlaGxNWGlEWDl3U0EifV0sInR5cGUiOiJ0ZW1wb3JhcnkifQ==",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -219,6 +267,7 @@
       "premium": "f",
       "alpha_2_code": "KD",
       "country_name": "Kids",
+      "t_stamp": "none",
       "url_license": "12fee297311f4bab91367d0e9c3a0a2f:656071dbdffbda440a6fde4fda56de21",
       "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"ExoPlayerDemo/2.15.1 (Linux; Android 13) ExoPlayerLib/2.15.1\"}",
       "header_license": "{\"x-data\":\"none\"}"
