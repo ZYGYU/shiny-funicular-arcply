@@ -22,12 +22,7 @@ jobs:
           npm install puppeteer cheerio axios
 
       - name: Read and View PixelDrain Links
-        run: |
-         node script.js
-
-      - name: Send Report to Telegram
-        run: |
-          TOKEN="${{ secrets.TELEGRAM_BOT_TOKEN }}"
-          CHAT_ID="${{ secrets.TELEGRAM_CHAT_ID }}"
-          MESSAGE=$(cat report.txt)
-          curl -s -X POST "https://api.telegram.org/bot$TOKEN/sendMessage" -d "chat_id=$CHAT_ID&text=$MESSAGE" -d "parse_mode=Markdown"
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node script.js
