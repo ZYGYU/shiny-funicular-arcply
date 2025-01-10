@@ -19,7 +19,7 @@ jobs:
 
       - name: Install Puppeteer
         run: |
-          npm install puppeteer
+          npm install puppeteer cheerio axios
 
       - name: Read and View PixelDrain Links
         run: |
