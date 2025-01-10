@@ -21,44 +21,47 @@ const puppeteer = require('puppeteer');
       process.exit(1);
     }
 
+    const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+    const page = await browser.newPage();
     let report = 'Laporan Kunjungan Link:\n\n';
 
     for (const link of links) {
       console.log(`Mengunjungi: ${link}`);
+      await page.goto(link, { waitUntil: 'networkidle2' });
+      await new Promise(resolve => setTimeout(resolve, 5000)); // Tunggu beberapa detik
 
-      // Gunakan curl untuk mendapatkan informasi
+      // Menggunakan curl untuk mendapatkan informasi file
       exec(`curl -s ${link}`, (error, stdout, stderr) => {
         if (error) {
-          console.error(`Error: ${error.message}`);
-          return;
-        }
-        if (stderr) {
-          console.error(`stderr: ${stderr}`);
+          console.error(`Error executing curl: ${error.message}`);
           return;
         }
 
-        // Proses hasil dari curl
+        // Memparsing data dari output curl
         try {
-          const data = JSON.parse(stdout); // Gantilah ini jika output bukan JSON
+          const responseData = JSON.parse(stdout); // Mengasumsikan server mengembalikan JSON
+          const views = responseData.api_response ? responseData.api_response.views : 0;
+          const downloads = responseData.api_response ? responseData.api_response.downloads : 0;
+          const bandwidthUsed = responseData.api_response ? responseData.api_response.bandwidthUsed : 0;
+          const fileName = responseData.api_response ? responseData.api_response.fileName : 'Unknown';
+
           report += `Link: ${link}\n`;
-          report += `Total Views: ${data.views}\n`; // Ubah sesuai dengan struktur data yang sebenarnya
-          report += `Total Downloads: ${data.downloads}\n`; // Ubah sesuai dengan struktur data yang sebenarnya
-          report += `Bandwidth Used: ${data.bandwidth_used}\n`; // Ubah sesuai dengan struktur data yang sebenarnya
-          report += `Nama File: ${data.name}\n\n`; // Ubah sesuai dengan struktur data yang sebenarnya
+          report += `File Name: ${fileName}\n`;
+          report += `Views: ${views}\n`;
+          report += `Downloads: ${downloads}\n`;
+          report += `Bandwidth Used: ${bandwidthUsed}\n\n`;
         } catch (parseError) {
           console.error(`Gagal memparse JSON dari ${link}, tipe konten: ${typeof stdout}`);
         }
       });
     }
 
-    // Tunggu sampai semua proses selesai sebelum menyimpan laporan
-    setTimeout(() => {
-      fs.writeFileSync('report.txt', report);
-      console.log('Laporan berhasil disimpan ke report.txt.');
-    }, 5000); // Sesuaikan waktu tunggu jika perlu
+    await browser.close();
 
+    // Simpan laporan ke file setelah semua curl selesai
+    fs.writeFileSync('report.txt', report);
+    console.log('Laporan berhasil disimpan ke report.txt.');
   } catch (err) {
-    console.error('Terjadi kesalahan:', err.message);
-    process.exit(1);
+    console.error(err);
   }
 })();
