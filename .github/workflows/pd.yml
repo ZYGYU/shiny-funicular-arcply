@@ -1,9 +1,7 @@
-name: PixelDrain
+name: Extend PixelDrain Link Lifetime
 
 on:
   workflow_dispatch:
-  schedule:
-     - cron: '0 17 * * *'
 
 jobs:
   view-links:
@@ -56,8 +54,12 @@ jobs:
               const page = await browser.newPage();
               for (const link of links) {
                 console.log(`Visiting: ${link}`);
-                await page.goto(link, { waitUntil: 'networkidle2' });
-                await page.waitForTimeout(5000); // Tunggu 5 detik
+                try {
+                  await page.goto(link, { waitUntil: 'networkidle2' });
+                  await new Promise(resolve => setTimeout(resolve, 5000)); // Tunggu 5 detik
+                } catch (err) {
+                  console.error(`Gagal mengunjungi link: ${link}, Error: ${err.message}`);
+                }
               }
 
               await browser.close();
