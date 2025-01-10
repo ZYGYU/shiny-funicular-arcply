@@ -3,45 +3,68 @@ name: PixelDrain
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *' # Menjalankan setiap jam
+     - cron: '0 17 * * *'
 
 jobs:
   view-links:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # Versi Node.js yang mendukung Puppeteer
+          node-version: '18'
 
       - name: Install Puppeteer
         run: |
           npm install puppeteer
 
-      - name: View PixelDrain Links
-        env:
-          PIXELDRAIN_LINKS: |
-            https://pixeldrain.com/u/BcR69a6G
-            https://pixeldrain.com/u/GkpQJJpC
+      - name: Read and View PixelDrain Links
         run: |
           node <<EOF
+          const fs = require('fs');
           const puppeteer = require('puppeteer');
 
           (async () => {
-            const links = process.env.PIXELDRAIN_LINKS.split('\\n');
-            const browser = await puppeteer.launch({
-              headless: true, // Jalankan dalam mode headless
-              args: ['--no-sandbox', '--disable-setuid-sandbox'] // Tambahan argumen untuk kompatibilitas di Actions
-            });
-            const page = await browser.newPage();
-            for (const link of links) {
-              console.log(`Visiting: ${link}`);
-              await page.goto(link, { waitUntil: 'networkidle2' }); // Tunggu sampai halaman selesai dimuat
-              await new Promise(resolve => setTimeout(resolve, 5000)); // Tunggu 5 detik
+            try {
+              // Baca file links.txt
+              const filePath = './links.txt';
+              if (!fs.existsSync(filePath)) {
+                console.error("File links.txt tidak ditemukan.");
+                process.exit(1);
+              }
+
+              const fileContent = fs.readFileSync(filePath, 'utf-8');
+              const links = fileContent
+                .split('\n') // Pisahkan per baris
+                .map(link => link.trim()) // Hapus spasi ekstra
+                .filter(link => link && link.startsWith('https://pixeldrain.com/u/')); // Validasi link
+
+              if (links.length === 0) {
+                console.error("Tidak ada link yang valid di file links.txt.");
+                process.exit(1);
+              }
+
+              // Mulai Puppeteer
+              const browser = await puppeteer.launch({
+                headless: true,
+                args: ['--no-sandbox', '--disable-setuid-sandbox']
+              });
+
+              const page = await browser.newPage();
+              for (const link of links) {
+                console.log(`Visiting: ${link}`);
+                await page.goto(link, { waitUntil: 'networkidle2' });
+                await page.waitForTimeout(5000); // Tunggu 5 detik
+              }
+
+              await browser.close();
+              console.log("Semua link telah dikunjungi.");
+            } catch (err) {
+              console.error("Terjadi kesalahan:", err.message);
+              process.exit(1);
             }
-            await browser.close();
-          })().catch(err => {
-            console.error("Error:", err);
-            process.exit(1);
-          });
+          })();
           EOF
