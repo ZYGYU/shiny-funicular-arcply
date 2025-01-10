@@ -3,8 +3,7 @@ name: Extend PD Link
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'
-
+    - cron: '0 17 * * *'
 
 jobs:
   view-links:
@@ -23,6 +22,7 @@ jobs:
           npm install puppeteer
 
       - name: Read and View PixelDrain Links
+        id: view_links
         run: |
           node <<EOF
           const fs = require('fs');
@@ -30,7 +30,6 @@ jobs:
 
           (async () => {
             try {
-              // Baca file links.txt
               const filePath = './links.txt';
               if (!fs.existsSync(filePath)) {
                 console.error("File links.txt tidak ditemukan.");
@@ -39,27 +38,44 @@ jobs:
 
               const fileContent = fs.readFileSync(filePath, 'utf-8');
               const links = fileContent
-                .split('\n') // Pisahkan per baris
-                .map(link => link.trim()) // Hapus spasi ekstra
-                .filter(link => link && link.startsWith('https://pixeldrain.com/u/')); // Validasi link
+                .split('\n')
+                .map(link => link.trim())
+                .filter(link => link && link.startsWith('https://pixeldrain.com/u/'));
 
               if (links.length === 0) {
                 console.error("Tidak ada link yang valid di file links.txt.");
                 process.exit(1);
               }
 
-              // Mulai Puppeteer
               const browser = await puppeteer.launch({
                 headless: true,
                 args: ['--no-sandbox', '--disable-setuid-sandbox']
               });
 
               const page = await browser.newPage();
+              let report = 'Laporan Kunjungan Link:\n\n';
+              
               for (const link of links) {
                 console.log(`Visiting: ${link}`);
                 try {
                   await page.goto(link, { waitUntil: 'networkidle2' });
-                  await new Promise(resolve => setTimeout(resolve, 5000)); // Tunggu 5 detik
+                  await new Promise(resolve => setTimeout(resolve, 5000));
+
+                  // Ambil informasi dari halaman
+                  const info = await page.evaluate(() => {
+                    const views = window.viewer_data.api_response.views;
+                    const downloads = window.viewer_data.api_response.downloads;
+                    const bandwidthUsed = window.viewer_data.api_response.bandwidth_used;
+                    const fileName = window.viewer_data.api_response.name;
+                    return { views, downloads, bandwidthUsed, fileName };
+                  });
+
+                  report += `Link: ${link}\n`;
+                  report += `Nama File: ${info.fileName}\n`;
+                  report += `Total Views: ${info.views}\n`;
+                  report += `Total Downloads: ${info.downloads}\n`;
+                  report += `Bandwidth Used: ${info.bandwidthUsed}\n\n`;
+
                 } catch (err) {
                   console.error(`Gagal mengunjungi link: ${link}, Error: ${err.message}`);
                 }
@@ -67,9 +83,19 @@ jobs:
 
               await browser.close();
               console.log("Semua link telah dikunjungi.");
+              console.log(report);
+              // Simpan laporan untuk langkah selanjutnya
+              fs.writeFileSync('report.txt', report);
             } catch (err) {
               console.error("Terjadi kesalahan:", err.message);
               process.exit(1);
             }
           })();
           EOF
+
+      - name: Send Report to Telegram
+        run: |
+          TOKEN="${{ secrets.TELEGRAM_BOT_TOKEN }}"
+          CHAT_ID="${{ secrets.TELEGRAM_CHAT_ID }}"
+          MESSAGE=$(cat report.txt)
+          curl -s -X POST "https://api.telegram.org/bot$TOKEN/sendMessage" -d "chat_id=$CHAT_ID&text=$MESSAGE" -d "parse_mode=Markdown"
