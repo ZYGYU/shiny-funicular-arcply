@@ -15,10 +15,9 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        sudo apt-get update
         sudo apt-get install -y yt-dlp  # Menggunakan yt-dlp untuk mengunduh video
         sudo apt-get install -y nload #Menginstall nload untuk memonitor bandwidth
-        yt-dlp -U
+        sudo apt-get update yt-dlp
 
     - name: Monitor Bandwidth Before Download
       id: start_bandwidth
@@ -30,7 +29,7 @@ jobs:
       env:
         TIKTOK_URL: 'https://www.tiktok.com/@user/video/7458204807241731335'  # Ganti dengan URL TikTok
       run: |
-        yt-dlp -o '/tmp/video.mp4' "$TIKTOK_URL"
+        yt-dlp -v -o '/tmp/video.mp4' "$TIKTOK_URL"
 
     - name: Monitor Bandwidth After Download
       run: |
