@@ -26,6 +26,7 @@ async function sendTelegramMessage(message) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
+    // Membaca tautan dari file links.txt
     const links = require('fs').readFileSync('links.txt', 'utf-8').split('\n');
 
     for (const link of links) {
@@ -35,7 +36,7 @@ async function sendTelegramMessage(message) {
 
             const html = await page.content();
             const $ = cheerio.load(html);
-            const scriptContent = $("script").eq(1).html();
+            const scriptContent = $("script").eq(0).html(); // Mengambil script pertama
 
             if (!scriptContent) {
                 console.error(`Script content not found for link: ${link}`);
@@ -44,7 +45,14 @@ async function sendTelegramMessage(message) {
 
             let apiResponse;
             try {
-                apiResponse = JSON.parse(scriptContent);
+                // Mengambil dan memparsing data dari script
+                const jsonDataMatch = scriptContent.match(/window.viewer_data = (.*?);/);
+                if (jsonDataMatch && jsonDataMatch[1]) {
+                    apiResponse = JSON.parse(jsonDataMatch[1]);
+                } else {
+                    console.error(`JSON data not found in script for link: ${link}`);
+                    continue; // Lewati ke tautan berikutnya
+                }
             } catch (error) {
                 console.error(`Failed to parse JSON for link: ${link}. Error: ${error.message}`);
                 continue; // Lewati ke tautan berikutnya
@@ -52,6 +60,7 @@ async function sendTelegramMessage(message) {
 
             const { id, name, size, views, downloads, bandwidth_used, date_last_view, date_upload } = apiResponse.api_response;
 
+            // Mempersiapkan pesan untuk dikirim ke Telegram
             const message = `
 File ID: ${id}
 File Name: ${name}
