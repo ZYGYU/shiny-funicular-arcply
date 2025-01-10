@@ -17,8 +17,8 @@ async function sendMessageToTelegram(message) {
 function formatBandwidth(bytes) {
     const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
     if (bytes === 0) return '0 B';
-    const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
-    return (bytes / Math.pow(1024, i)).toFixed(2) + ' ' + sizes[i];
+    const i = Math.floor(Math.log10(bytes) / 3);
+    return (bytes / Math.pow(1000, i)).toFixed(2) + ' ' + sizes[i];
 }
 
 async function fetchLinkInfo(link) {
