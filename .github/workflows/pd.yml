@@ -1,7 +1,6 @@
-name: Pixeldrain
+name: PixelDrain
 
 on:
-  workflow_dispatch:
   schedule:
     - cron: '0 * * * *' # Menjalankan setiap jam
 
@@ -34,10 +33,13 @@ jobs:
             });
             const page = await browser.newPage();
             for (const link of links) {
-              console.log(`Opening ${link}`);
+              console.log(`Visiting: ${link}`);
               await page.goto(link, { waitUntil: 'networkidle2' }); // Tunggu sampai halaman selesai dimuat
-              await page.waitForTimeout(5000); // Tunggu 5 detik untuk memastikan kunjungan dihitung
+              await new Promise(resolve => setTimeout(resolve, 5000)); // Tunggu 5 detik
             }
             await browser.close();
-          })();
+          })().catch(err => {
+            console.error("Error:", err);
+            process.exit(1);
+          });
           EOF
