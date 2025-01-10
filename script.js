@@ -1,8 +1,23 @@
 const puppeteer = require('puppeteer');
 const axios = require('axios');
-const cheerio = require('cheerio');
+const fs = require('fs').promises;
 
-// Fungsi untuk mengonversi bandwidth
+// Mengambil token dan chat ID dari variabel lingkungan
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+
+async function sendMessageToTelegram(message) {
+    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+    try {
+        await axios.post(url, {
+            chat_id: TELEGRAM_CHAT_ID,
+            text: message
+        });
+    } catch (error) {
+        console.error('Failed to send message to Telegram:', error);
+    }
+}
+
 function formatBandwidth(bytes) {
     const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
     if (bytes === 0) return '0 B';
@@ -10,71 +25,64 @@ function formatBandwidth(bytes) {
     return (bytes / Math.pow(1000, i)).toFixed(2) + ' ' + sizes[i];
 }
 
-// Fungsi untuk mengirim pesan ke Telegram
-async function sendTelegramMessage(message) {
-    const token = process.env.TELEGRAM_BOT_TOKEN;
-    const chatId = process.env.TELEGRAM_CHAT_ID;
-    const url = `https://api.telegram.org/bot${token}/sendMessage`;
-
-    await axios.post(url, {
-        chat_id: chatId,
-        text: message,
-    });
-}
-
-(async () => {
+async function fetchLinkInfo(link) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
-    // Membaca tautan dari file links.txt
-    const links = require('fs').readFileSync('links.txt', 'utf-8').split('\n');
+    console.log(`Opening link: ${link}`);
+    try {
+        await page.goto(link, { waitUntil: 'networkidle2' });
+        const html = await page.content();
 
-    for (const link of links) {
-        if (link.trim()) {
-            console.log(`Opening link: ${link}`);
-            await page.goto(link, { waitUntil: 'domcontentloaded' });
+        // Mengambil informasi dari HTML menggunakan regex
+        const viewerDataMatch = html.match(/window\.viewer_data\s*=\s*(\{.*?\});/);
+        const viewerData = viewerDataMatch ? JSON.parse(viewerDataMatch[1]) : null;
 
-            const html = await page.content();
-            const $ = cheerio.load(html);
-            const scriptContent = $("script").eq(0).html(); // Mengambil script pertama
+        if (viewerData && viewerData.api_response) {
+            const apiResponse = viewerData.api_response;
+            const fileName = apiResponse.name || 'Unknown';
+            const fileId = apiResponse.id || 'Unknown';
+            const fileSize = formatBandwidth(apiResponse.size) || 'Unknown';
+            const views = apiResponse.views || 'Unknown';
+            const downloads = apiResponse.downloads || 'Unknown';
+            const bandwidthUsed = formatBandwidth(apiResponse.bandwidth_used) || 'Unknown';
+            const dateUpload = apiResponse.date_upload || 'Unknown';
+            const dateLastView = apiResponse.date_last_view || 'Unknown';
 
-            if (!scriptContent) {
-                console.error(`Script content not found for link: ${link}`);
-                continue; // Lewati ke tautan berikutnya
-            }
-
-            let apiResponse;
-            try {
-                // Mengambil dan memparsing data dari script
-                const jsonDataMatch = scriptContent.match(/window.viewer_data = (.*?);/);
-                if (jsonDataMatch && jsonDataMatch[1]) {
-                    apiResponse = JSON.parse(jsonDataMatch[1]);
-                } else {
-                    console.error(`JSON data not found in script for link: ${link}`);
-                    continue; // Lewati ke tautan berikutnya
-                }
-            } catch (error) {
-                console.error(`Failed to parse JSON for link: ${link}. Error: ${error.message}`);
-                continue; // Lewati ke tautan berikutnya
-            }
-
-            const { id, name, size, views, downloads, bandwidth_used, date_last_view, date_upload } = apiResponse.api_response;
-
-            // Mempersiapkan pesan untuk dikirim ke Telegram
             const message = `
-File ID: ${id}
-File Name: ${name}
-Size: ${formatBandwidth(size)}
+File Name: ${fileName}
+File ID: ${fileId}
+Size: ${fileSize}
 Views: ${views}
 Downloads: ${downloads}
-Bandwidth Used: ${formatBandwidth(bandwidth_used)}
-Date Last Viewed: ${date_last_view}
-Date Uploaded: ${date_upload}
-            `;
-            await sendTelegramMessage(message);
-            await page.waitForTimeout(2000); // Menunggu 2 detik setelah membuka setiap link
-        }
-    }
+Bandwidth Used: ${bandwidthUsed}
+Date Uploaded: ${new Date(dateUpload).toLocaleString()}
+Date Last Viewed: ${new Date(dateLastView).toLocaleString()}
+`;
 
-    await browser.close();
-})();
+            await sendMessageToTelegram(message);
+        } else {
+            console.error('No viewer data found for link:', link);
+        }
+    } catch (error) {
+        console.error('Error fetching link info:', error);
+    } finally {
+        await browser.close();
+    }
+}
+
+async function main() {
+    try {
+        const data = await fs.readFile('links.txt', 'utf-8');
+        const links = data.split('\n').filter(Boolean); // Membaca links dari file
+
+        for (const link of links) {
+            await fetchLinkInfo(link);
+            await new Promise(resolve => setTimeout(resolve, 2000)); // Delay 2 detik
+        }
+    } catch (error) {
+        console.error('Error in main function:', error);
+    }
+}
+
+main().catch(console.error);
