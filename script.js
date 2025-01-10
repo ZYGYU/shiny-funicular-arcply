@@ -35,14 +35,22 @@ async function sendTelegramMessage(message) {
 
             const html = await page.content();
             const $ = cheerio.load(html);
-            const id = JSON.parse($("script").eq(1).html()).api_response.id;
-            const name = JSON.parse($("script").eq(1).html()).api_response.name;
-            const size = JSON.parse($("script").eq(1).html()).api_response.size;
-            const views = JSON.parse($("script").eq(1).html()).api_response.views;
-            const downloads = JSON.parse($("script").eq(1).html()).api_response.downloads;
-            const bandwidth_used = JSON.parse($("script").eq(1).html()).api_response.bandwidth_used;
-            const date_last_view = JSON.parse($("script").eq(1).html()).api_response.date_last_view;
-            const date_upload = JSON.parse($("script").eq(1).html()).api_response.date_upload;
+            const scriptContent = $("script").eq(1).html();
+
+            if (!scriptContent) {
+                console.error(`Script content not found for link: ${link}`);
+                continue; // Lewati ke tautan berikutnya
+            }
+
+            let apiResponse;
+            try {
+                apiResponse = JSON.parse(scriptContent);
+            } catch (error) {
+                console.error(`Failed to parse JSON for link: ${link}. Error: ${error.message}`);
+                continue; // Lewati ke tautan berikutnya
+            }
+
+            const { id, name, size, views, downloads, bandwidth_used, date_last_view, date_upload } = apiResponse.api_response;
 
             const message = `
 File ID: ${id}
@@ -51,7 +59,7 @@ Size: ${formatBandwidth(size)}
 Views: ${views}
 Downloads: ${downloads}
 Bandwidth Used: ${formatBandwidth(bandwidth_used)}
-Last Viewed: ${date_last_view}
+Date Last Viewed: ${date_last_view}
 Date Uploaded: ${date_upload}
             `;
             await sendTelegramMessage(message);
