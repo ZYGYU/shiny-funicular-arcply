@@ -13,6 +13,14 @@ async function sendMessageToTelegram(message) {
     });
 }
 
+// Fungsi untuk mengonversi bandwidth
+function formatBandwidth(bytes) {
+    const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+    if (bytes === 0) return '0 B';
+    const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+    return (bytes / Math.pow(1024, i)).toFixed(2) + ' ' + sizes[i];
+}
+
 async function fetchLinkInfo(link) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
@@ -32,7 +40,7 @@ async function fetchLinkInfo(link) {
     const fileName = fileNameMatch ? fileNameMatch[1] : 'Unknown';
     const views = viewsMatch ? viewsMatch[1] : 'Unknown';
     const downloads = downloadsMatch ? downloadsMatch[1] : 'Unknown';
-    const bandwidthUsed = bandwidthUsedMatch ? bandwidthUsedMatch[1] : 'Unknown';
+    const bandwidthUsed = bandwidthUsedMatch ? formatBandwidth(parseInt(bandwidthUsedMatch[1])) : 'Unknown';
 
     const message = `
 File Name: ${fileName}
@@ -46,7 +54,9 @@ Bandwidth Used: ${bandwidthUsed}
 }
 
 async function main() {
-    const links = ['https://pixeldrain.com/u/BcR69a6G']; // Ganti dengan daftar link Anda
+    const fs = require('fs');
+    const links = fs.readFileSync('links.txt', 'utf-8').split('\n').filter(Boolean); // Membaca links dari file
+
     for (const link of links) {
         await fetchLinkInfo(link);
     }
