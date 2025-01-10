@@ -26,3 +26,19 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: node script.js
+
+      - name: Fetch files
+        run: |
+          # Make the curl request using the secret API key and capture the output
+          response=$(curl -X GET -u :${{ secrets.PD_API }} https://pixeldrain.com/api/user/files)
+          
+          # Parse the JSON response to extract file IDs and create links
+          echo "$response" | jq -r '.files[] | "https://pixeldrain.com/u/\(.id)"' > links.txt
+
+      - name: Commit links.txt
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add links.txt
+          git commit -m "Update links.txt" || echo "No changes to commit"
+          git push
