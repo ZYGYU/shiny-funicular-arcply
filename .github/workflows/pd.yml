@@ -1,0 +1,42 @@
+name: Pixeldrain
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Menjalankan setiap jam
+
+jobs:
+  view-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Versi Node.js yang mendukung Puppeteer
+
+      - name: Install Puppeteer
+        run: |
+          npm install puppeteer
+
+      - name: View PixelDrain Links
+        env:
+          PIXELDRAIN_LINKS: |
+            https://pixeldrain.com/u/BcR69a6G
+        run: |
+          node <<EOF
+          const puppeteer = require('puppeteer');
+
+          (async () => {
+            const links = process.env.PIXELDRAIN_LINKS.split('\\n');
+            const browser = await puppeteer.launch({
+              headless: true, // Jalankan dalam mode headless
+              args: ['--no-sandbox', '--disable-setuid-sandbox'] // Tambahan argumen untuk kompatibilitas di Actions
+            });
+            const page = await browser.newPage();
+            for (const link of links) {
+              console.log(`Opening ${link}`);
+              await page.goto(link, { waitUntil: 'networkidle2' }); // Tunggu sampai halaman selesai dimuat
+              await page.waitForTimeout(5000); // Tunggu 5 detik untuk memastikan kunjungan dihitung
+            }
+            await browser.close();
+          })();
+          EOF
