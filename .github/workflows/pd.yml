@@ -1,7 +1,10 @@
-name: Extend PixelDrain Link Lifetime
+name: Extend PD Link
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
+
 
 jobs:
   view-links:
