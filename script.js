@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { exec } = require('child_process');
+const puppeteer = require('puppeteer');
 
 (async () => {
   try {
@@ -20,44 +20,51 @@ const { exec } = require('child_process');
       process.exit(1);
     }
 
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
+    const page = await browser.newPage();
     let report = 'Laporan Kunjungan Link:\n\n';
 
     for (const link of links) {
-      console.log(`Mengambil informasi dari: ${link}`);
+      console.log(`Mengunjungi: ${link}`);
       try {
-        // Menggunakan curl untuk mendapatkan informasi
-        exec(`curl -s ${link}`, (error, stdout, stderr) => {
-          if (error) {
-            console.error(`Gagal mengambil informasi: ${error.message}`);
-            return;
-          }
-          if (stderr) {
-            console.error(`Error: ${stderr}`);
-            return;
-          }
+        const response = await page.goto(link, { waitUntil: 'networkidle2' });
+        const contentType = response.headers()['content-type'];
 
-          // Memproses respons dari curl
-          const response = JSON.parse(stdout); // Asumsikan responsnya dalam format JSON
-          const views = response.api_response.views;
-          const downloads = response.api_response.downloads;
-          const bandwidthUsed = response.api_response.bandwidth_used;
-          const fileName = response.api_response.name;
+        if (!contentType.includes('application/json')) {
+          console.error(`Response dari ${link} bukan JSON, tipe konten: ${contentType}`);
+          continue;
+        }
 
-          report += `Link: ${link}\n`;
-          report += `Nama File: ${fileName}\n`;
-          report += `Total Views: ${views}\n`;
-          report += `Total Downloads: ${downloads}\n`;
-          report += `Bandwidth Used: ${bandwidthUsed}\n\n`;
+        await new Promise(resolve => setTimeout(resolve, 5000));
 
-          console.log('Informasi berhasil diambil.');
+        const info = await page.evaluate(() => {
+          const views = window.viewer_data.api_response.views;
+          const downloads = window.viewer_data.api_response.downloads;
+          const bandwidthUsed = window.viewer_data.api_response.bandwidth_used;
+          const fileName = window.viewer_data.api_response.name;
+          return { views, downloads, bandwidthUsed, fileName };
         });
+
+        report += `Link: ${link}\n`;
+        report += `Nama File: ${info.fileName}\n`;
+        report += `Total Views: ${info.views}\n`;
+        report += `Total Downloads: ${info.downloads}\n`;
+        report += `Bandwidth Used: ${info.bandwidthUsed}\n\n`;
+
+        console.log('Informasi berhasil diambil.');
       } catch (err) {
         console.error(`Gagal mengunjungi link: ${link}, Error: ${err.message}`);
       }
     }
 
-    // Catatan: Anda mungkin ingin menulis report setelah semua informasi diambil
-    // fs.writeFileSync('report.txt', report);
+    // Menyimpan laporan ke file
+    fs.writeFileSync('report.txt', report);
+    console.log('Laporan berhasil disimpan ke report.txt.');
+
+    await browser.close();
   } catch (err) {
     console.error('Terjadi kesalahan:', err.message);
     process.exit(1);
