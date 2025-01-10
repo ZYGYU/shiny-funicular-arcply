@@ -11,8 +11,9 @@ const puppeteer = require('puppeteer');
     for (const link of links) {
         console.log(`Opening link: ${link}`);
         await page.goto(link, { waitUntil: 'networkidle2' });
-        // Tambahkan delay jika perlu
-        await page.waitForTimeout(2000); // Menunggu 2 detik setelah membuka setiap link
+        
+        // Menunggu selama 2 detik setelah membuka setiap link
+        await new Promise(resolve => setTimeout(resolve, 2000)); // Menggunakan Promise untuk menunggu
     }
 
     await browser.close();
