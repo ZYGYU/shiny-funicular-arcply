@@ -21,7 +21,7 @@ jobs:
         run: |
           npm install puppeteer cheerio axios
 
-      - name: Read and View PixelDrain Links
+      - name: Read and View Links
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -30,7 +30,7 @@ jobs:
       - name: Fetch files
         run: |
           # Make the curl request using the secret API key and capture the output
-          response=$(curl -X GET -u :${{ secrets.PD_API }} https://pixeldrain.com/api/user/files)
+          response=$(curl -s -X GET -u :${{ secrets.PD_API }} https://pixeldrain.com/api/user/files)
           
           # Parse the JSON response to extract file IDs and create links
           echo "$response" | jq -r '.files[] | "https://pixeldrain.com/u/\(.id)"' > links.txt
