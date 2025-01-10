@@ -40,5 +40,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add links.txt
-          git commit -m "Update links.txt" || echo "No changes to commit"
+          git commit -m "Update links.txt"
           git push
