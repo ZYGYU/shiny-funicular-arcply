@@ -1,6 +1,7 @@
 name: Download TikTok and Send to Telegram
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 17 * * *'  # Menjalankan setiap hari pada pukul 17:00 UTC
 
@@ -26,7 +27,7 @@ jobs:
 
     - name: Download TikTok Video
       env:
-        TIKTOK_URL: 'https://www.tiktok.com/@user/video/video_id'  # Ganti dengan URL TikTok
+        TIKTOK_URL: 'https://www.tiktok.com/@user/video/7458204807241731335'  # Ganti dengan URL TikTok
       run: |
         yt-dlp -o '/tmp/video.mp4' "$TIKTOK_URL"
 
