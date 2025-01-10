@@ -57,7 +57,6 @@ const puppeteer = require('puppeteer');
     await browser.close();
     console.log('Semua link telah dikunjungi.');
     console.log(report);
-    // Simpan laporan untuk langkah selanjutnya
     fs.writeFileSync('report.txt', report);
   } catch (err) {
     console.error('Terjadi kesalahan:', err.message);
