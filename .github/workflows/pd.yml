@@ -22,9 +22,7 @@ jobs:
           npm install puppeteer
 
       - name: Read and View PixelDrain Links
-        id: view_links
         run: |
-          node <<EOF
           const fs = require('fs');
           const puppeteer = require('puppeteer');
 
@@ -54,7 +52,7 @@ jobs:
 
               const page = await browser.newPage();
               let report = 'Laporan Kunjungan Link:\n\n';
-              
+
               for (const link of links) {
                 console.log(`Visiting: ${link}`);
                 try {
@@ -91,7 +89,7 @@ jobs:
               process.exit(1);
             }
           })();
-          EOF
+
 
       - name: Send Report to Telegram
         run: |
