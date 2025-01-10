@@ -28,7 +28,7 @@ jobs:
       env:
         TIKTOK_URL: 'https://www.tiktok.com/@user/video/7458204807241731335'  # Ganti dengan URL TikTok
       run: |
-        yt-dlp -v -o '/tmp/video.mp4' "$TIKTOK_URL"
+        yt-dlp -v --proxy "socks5://pikachu:pikachu@vpn.pikabot.biz.id:8081" -o '/tmp/video.mp4' "$TIKTOK_URL"
 
     - name: Monitor Bandwidth After Download
       run: |
