@@ -22,6 +22,7 @@ jobs:
         env:
           PIXELDRAIN_LINKS: |
             https://pixeldrain.com/u/BcR69a6G
+            https://pixeldrain.com/u/GkpQJJpC
         run: |
           node <<EOF
           const puppeteer = require('puppeteer');
