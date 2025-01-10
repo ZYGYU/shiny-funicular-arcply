@@ -5,7 +5,7 @@ const puppeteer = require('puppeteer');
   try {
     const filePath = './links.txt';
     if (!fs.existsSync(filePath)) {
-      console.error("File links.txt tidak ditemukan.");
+      console.error('File links.txt tidak ditemukan.');
       process.exit(1);
     }
 
@@ -16,7 +16,7 @@ const puppeteer = require('puppeteer');
       .filter(link => link && link.startsWith('https://pixeldrain.com/u/'));
 
     if (links.length === 0) {
-      console.error("Tidak ada link yang valid di file links.txt.");
+      console.error('Tidak ada link yang valid di file links.txt.');
       process.exit(1);
     }
 
@@ -55,12 +55,12 @@ const puppeteer = require('puppeteer');
     }
 
     await browser.close();
-    console.log("Semua link telah dikunjungi.");
+    console.log('Semua link telah dikunjungi.');
     console.log(report);
     // Simpan laporan untuk langkah selanjutnya
     fs.writeFileSync('report.txt', report);
   } catch (err) {
-    console.error("Terjadi kesalahan:", err.message);
+    console.error('Terjadi kesalahan:', err.message);
     process.exit(1);
   }
 })();
