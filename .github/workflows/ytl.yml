@@ -17,7 +17,8 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y yt-dlp  # Menggunakan yt-dlp untuk mengunduh video
-        sudo apt-get install -y nload     # Menginstall nload untuk memonitor bandwidth
+        sudo apt-get install -y nload #Menginstall nload untuk memonitor bandwidth
+        yt-dlp -U
 
     - name: Monitor Bandwidth Before Download
       id: start_bandwidth
