@@ -3,7 +3,7 @@ name: Extend PD Link
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   view-links:
