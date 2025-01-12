@@ -16,7 +16,6 @@
       "alpha_2_code": "MI",
       "country_name": "Movies",
       "t_stamp": "none",
-      "s_stamp": "none",
       "url_license": "8ab47741930c476780515f9a00decb0a:7ab4b9ae5a48aa526e511a913b832769",
       "header_iptv": "{\"Referer\":\"https://199.87.210.226/\",\"Origin\":\"https://199.87.210.226\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0\",\"Accept-Encoding\":\"gzip, deflate, br, zstd\",\"Priority\":\"u=4\",\"TE\":\"trailers\",\"Pragma\":\"no-cache\",\"Accept-Language\":\"en-US,en;q=0.5\",\"Cache-Control\":\"no-cache\",\"Connection\":\"keep-alive\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -35,7 +34,6 @@
       "alpha_2_code": "MI",
       "country_name": "Movies",
       "t_stamp": "1736497800",
-      "s_stamp": "none",
       "url_license": "8ab47741930c476780515f9a00decb0a:7ab4b9ae5a48aa526e511a913b832769",
       "header_iptv": "{\"Referer\":\"https://199.87.210.226/\",\"Origin\":\"https://199.87.210.226\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0\",\"Accept-Encoding\":\"gzip, deflate, br, zstd\",\"Priority\":\"u=4\",\"TE\":\"trailers\",\"Pragma\":\"no-cache\",\"Accept-Language\":\"en-US,en;q=0.5\",\"Cache-Control\":\"no-cache\",\"Connection\":\"keep-alive\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -54,7 +52,6 @@
       "alpha_2_code": "MI",
       "country_name": "Movies",
       "t_stamp": "none",
-      "s_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"https://172.96.161.72/\",\"Origin\":\"https://172.96.161.72\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -73,7 +70,6 @@
       "alpha_2_code": "MI",
       "country_name": "Movies",
       "t_stamp": "none",
-      "s_stamp": "none",
       "url_license": "",
       "header_iptv": "{\"Referer\":\"https://172.96.161.72/\",\"Origin\":\"https://172.96.161.72\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -92,7 +88,6 @@
       "alpha_2_code": "MI",
       "country_name": "Movies",
       "t_stamp": "1736497800",
-      "s_stamp": "none",
       "url_license": "8ab47741930c476780515f9a00decb0a:7ab4b9ae5a48aa526e511a913b832769",
       "header_iptv": "{\"Referer\":\"https://199.87.210.226/\",\"Origin\":\"https://199.87.210.226\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0\",\"Accept-Encoding\":\"gzip, deflate, br, zstd\",\"Priority\":\"u=4\",\"TE\":\"trailers\",\"Pragma\":\"no-cache\",\"Accept-Language\":\"en-US,en;q=0.5\",\"Cache-Control\":\"no-cache\",\"Connection\":\"keep-alive\"}",
       "header_license": "{\"x-data\":\"none\"}"
@@ -111,7 +106,6 @@
       "alpha_2_code": "MI",
       "country_name": "Movies",
       "t_stamp": "1736497800",
-      "s_stamp": "none",
       "url_license": "8ab47741930c476780515f9a00decb0a:7ab4b9ae5a48aa526e511a913b832769",
       "header_iptv": "{\"Referer\":\"https://199.87.210.226/\",\"Origin\":\"https://199.87.210.226\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0\",\"Accept-Encoding\":\"gzip, deflate, br, zstd\",\"Priority\":\"u=4\",\"TE\":\"trailers\",\"Pragma\":\"no-cache\",\"Accept-Language\":\"en-US,en;q=0.5\",\"Cache-Control\":\"no-cache\",\"Connection\":\"keep-alive\"}",
       "header_license": "{\"x-data\":\"none\"}"
