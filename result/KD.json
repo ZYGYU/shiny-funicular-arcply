@@ -3,25 +3,6 @@
   "country": "KD",
   "info": [
     {
-      "id": "1463",
-      "name": "Copa del Rey [CH2]",
-      "tagline": "15 Jan 03:00 WIB - Ourense CF vs Valencia",
-      "hls": "https://tvpull.careryun.com/live/ballbar_32130.m3u8",
-      "namespace": "Copa del Rey [CH2]",
-      "is_live": "t",
-      "is_movie": "f",
-      "subtitle": "",
-      "jenis": "hls",
-      "premium": "f",
-      "alpha_2_code": "AA",
-      "country_name": "All Country",
-      "t_stamp": "1736884800",
-      "s_stamp": "1736892000",
-      "url_license": "eb5a3a48f3e191a00e3ac1e2d470c491:2c8b7198563527e524d66628c092ef1f",
-      "header_iptv": "{\"Referer\":\"none\",\"Origin\":\"none\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0\"}",
-      "header_license": "{\"x-data\":\"none\"}"
-    },
-    {
       "id": "1523",
       "name": "Copa del Rey [CH3]",
       "tagline": "16 Jan 01:30 WIB - Almeria vs Leganes",
