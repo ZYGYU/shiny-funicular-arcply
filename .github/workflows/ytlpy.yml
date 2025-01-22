@@ -141,7 +141,7 @@ jobs:
 
     - name: Commit acpn.txt
       run: |
-        git pull origin master --allow-unrelated-histories
+        git pull origin main --allow-unrelated-histories
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add acpn.txt
