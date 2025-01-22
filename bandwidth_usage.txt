@@ -1,3 +1,0 @@
-Bandwidth Usage All Time:
-  Received: 254 MB
-  Transmitted: 2 MB
