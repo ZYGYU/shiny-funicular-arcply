@@ -21,10 +21,6 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y yt-dlp vnstat
 
-    - name: Reset Bandwidth Statistics
-      run: |
-        sudo vnstat -i eth0  # Replace eth0 with the appropriate interface (e.g., ens33, wlan0)
-
     - name: Save Cookies to File
       env:
         TT_COOKIES: ${{ secrets.TT_COOKIES }}
@@ -37,10 +33,23 @@ jobs:
       run: |
         yt-dlp -v --cookies cookies.txt -o '/tmp/video.mp4' "$TIKTOK_URL"
 
-    - name: Capture Bandwidth Usage
+    - name: Capture Bandwidth Usage with ifconfig
       run: |
-        vnstat --oneline > /tmp/bandwidth_usage.txt
-        cat /tmp/bandwidth_usage.txt
+       # Replace eth0 with your network interface name
+       RX=$(ifconfig eth0 | grep 'RX packets' | awk '{print $5}')  # Received bytes
+       TX=$(ifconfig eth0 | grep 'TX packets' | awk '{print $5}')  # Transmitted bytes
+
+       # Convert bytes to MB
+       RX_MB=$(echo "$RX / 1048576" | bc)
+       TX_MB=$(echo "$TX / 1048576" | bc)
+
+       # Log the usage
+       echo "Bandwidth Usage All Time:" > /tmp/bandwidth_usage.txt
+       echo "  Received: $RX_MB MB" >> /tmp/bandwidth_usage.txt
+       echo "  Transmitted: $TX_MB MB" >> /tmp/bandwidth_usage.txt
+
+       # Display the log
+       cat /tmp/bandwidth_usage.txt
 
     - name: Send Video to Telegram
       env:
