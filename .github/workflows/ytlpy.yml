@@ -38,7 +38,7 @@ jobs:
         ARCHIVE_FILE: ${{ github.workspace }}/acpn.txt
         LOG_FILE: ${{ github.workspace }}/download.log
         NOTIF_CHANNEL_ID: '-1002471139847'
-        VIDEO_CHANNEL_ID: '-1002237077886'
+        VIDEO_CHANNEL_ID: '-1002357695125'
         BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TT_COOKIES: ${{ secrets.TT_COOKIES }}
       run: |
@@ -126,7 +126,7 @@ jobs:
                 '--download-archive', ARCHIVE_FILE,
                 '--cookies', 'cookies.txt',
                 '-o', f"{VIDEO_DIR}/@%(uploader)s - %(id)s.%(ext)s"],
-                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True
+                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=False
             )
 
             for line in process.stdout:
