@@ -94,38 +94,59 @@ jobs:
             with open(LOG_FILE, 'a') as log_file:
                 log_file.write("Mulai mengunggah video ke Telegram...\n")
 
-            for video_file in os.listdir(VIDEO_DIR):
-                if video_file.endswith('.mp4'):
-                    original_name = video_file
-                    uploader, video_id = original_name.split(' - ')[0][1:], original_name.split(' - ')[1].split('.')[0]
-                    caption = f"#{uploader} - https://www.tiktok.com/@/video/{video_id}"
+         for video_file in os.listdir(VIDEO_DIR):
+          if video_file.endswith('.mp4'):
+          original_name = video_file
+          uploader, video_id = original_name.split(' - ')[0][1:], original_name.split(' - ')[1].split('.')[0]
+          caption = f"#{uploader} - https://www.tiktok.com/@/video/{video_id}"
 
-                    print(f"File {original_name} sedang diunggah ke Telegram...")
-                    temp_name = f"temp_name{TIKTOK_LINKS.index(TIKTOK_LINK) + 1}.mp4"
-                    os.rename(os.path.join(VIDEO_DIR, video_file), os.path.join(VIDEO_DIR, temp_name))
+        print(f"File {original_name} sedang diunggah ke Telegram...")
+        temp_name = f"temp_name{TIKTOK_LINKS.index(TIKTOK_LINK) + 1}.mp4"
+        os.rename(os.path.join(VIDEO_DIR, video_file), os.path.join(VIDEO_DIR, temp_name))
 
-                    with open(os.path.join(VIDEO_DIR, temp_name), 'rb') as video:
-                        response = requests.post(
-                            f"https://api.telegram.org/bot{BOT_TOKEN}/sendVideo",
-                            data={"chat_id": VIDEO_CHANNEL_ID, "caption": caption, "parse_mode": "Markdown"},
-                            files={"video": video}
-                        )
+        retries = 3
+        success = False
 
-                    if response.ok:
-                        print(f"File {temp_name} berhasil diunggah ke Telegram.")
-                        with open(LOG_FILE, 'a') as log_file:
-                            log_file.write(f"Upload berhasil. Menghapus {temp_name}...\n")
-                        os.remove(os.path.join(VIDEO_DIR, temp_name))
-                    else:
-                        print(f"File {temp_name} gagal diunggah ke Telegram.")
-                        with open(LOG_FILE, 'a') as log_file:
-                            log_file.write(f"Upload gagal untuk {temp_name}.\n")
-                        requests.post(
-                            f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
-                            data={"chat_id": NOTIF_CHANNEL_ID, "text": f"Upload gagal untuk file: {temp_name}."}
-                        )
+        for attempt in range(retries):
+            with open(os.path.join(VIDEO_DIR, temp_name), 'rb') as video:
+                response = requests.post(
+                    f"https://api.telegram.org/bot{BOT_TOKEN}/sendVideo",
+                    data={"chat_id": VIDEO_CHANNEL_ID, "caption": caption, "parse_mode": "Markdown"},
+                    files={"video": video}
+                )
 
-                    time.sleep(3)
+            if response.ok:
+                print(f"File {temp_name} berhasil diunggah ke Telegram.")
+                with open(LOG_FILE, 'a') as log_file:
+                    log_file.write(f"Upload berhasil. Menghapus {temp_name}...\n")
+                os.remove(os.path.join(VIDEO_DIR, temp_name))
+                success = True
+                break
+            else:
+                print(f"Upload gagal untuk {temp_name}. Mencoba lagi ({attempt + 1}/{retries})...")
+                with open(LOG_FILE, 'a') as log_file:
+                    log_file.write(f"Upload gagal untuk {temp_name}. Retry {attempt + 1}/{retries}.\n")
+                time.sleep(5)
+
+        if not success:
+            print(f"Gagal upload ke Telegram, mencoba upload ke Rclone...")
+            with open(LOG_FILE, 'a') as log_file:
+                log_file.write(f"Upload ke Telegram gagal untuk {temp_name}. Mencoba upload ke Rclone...\n")
+
+            rclone_command = [
+                'rclone', 'move', os.path.join(VIDEO_DIR, temp_name),
+                'da:TikTok/Failed/', '--quiet', '--progress'
+            ]
+            rclone_result = subprocess.run(rclone_command, capture_output=True, text=True)
+
+            if rclone_result.returncode == 0:
+                print(f"File {temp_name} berhasil diunggah ke Rclone.")
+                with open(LOG_FILE, 'a') as log_file:
+                    log_file.write(f"Upload ke Rclone berhasil untuk {temp_name}.\n")
+            else:
+                print(f"Upload ke Rclone gagal untuk {temp_name}. Video dilewati.")
+                with open(LOG_FILE, 'a') as log_file:
+                    log_file.write(f"Upload ke Rclone gagal untuk {temp_name}. Video dilewati.\n")
 
         with open(LOG_FILE, 'rb') as log_file:
             requests.post(
