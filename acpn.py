@@ -3,32 +3,25 @@ import subprocess
 import time
 import requests
 
-# Paths for video storage and archive file
-VIDEO_DIR = "/home/runner/work/tiktok_downloader/videos"
-ARCHIVE_FILE = "archive.txt"
-LOCK_FILE = "/home/runner/work/tiktok_downloader/logs/acpn.tiktok.lock"
-LOG_FILE = "/home/runner/work/tiktok_downloader/logs/download.log"
-COOKIES_FILE = "/home/runner/work/tiktok_downloader/cookies/cookies.txt"
+# Path for video storage and archive file
+VIDEO_DIR = "videos"  # Create a folder for videos
+ARCHIVE_FILE = "archive.txt"  # This file will be in the root of your repository
+LOCK_FILE = "lock/acpn.tiktok.lock"  # This folder will be created
+LOG_FILE = "logs/download.log"  # This folder will be created
 
 # Telegram channel IDs and bot token
-NOTIF_CHANNEL_ID = os.environ.get("NOTIF_CHANNEL_ID")  # Fetch from environment variables
-VIDEO_CHANNEL_ID = os.environ.get("VIDEO_CHANNEL_ID")  # Fetch from environment variables
-BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")  # Fetch from environment variables
-
-# List of TikTok links
-TIKTOK_LINKS = [
-    "https://www.tiktok.com/@susupulen"
-]
+NOTIF_CHANNEL_ID = os.getenv('NOTIF_CHANNEL_ID')  # Make sure to set this in GitHub Secrets
+VIDEO_CHANNEL_ID = os.getenv('VIDEO_CHANNEL_ID')  # Make sure to set this in GitHub Secrets
+BOT_TOKEN = os.getenv('BOT_TOKEN')  # Make sure to set this in GitHub Secrets
 
 # Create directories if they do not exist
 os.makedirs(VIDEO_DIR, exist_ok=True)
 os.makedirs(os.path.dirname(LOCK_FILE), exist_ok=True)
 os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
-os.makedirs(os.path.dirname(ARCHIVE_FILE), exist_ok=True)
 
 # Create files if they do not exist
-open(ARCHIVE_FILE, 'a').close()
-open(LOG_FILE, 'a').close()
+open(ARCHIVE_FILE, 'a').close()  # Creates or opens the archive.txt file
+open(LOG_FILE, 'a').close()  # Creates or opens the log file
 
 # Check if lock file exists
 if os.path.exists(LOCK_FILE):
@@ -49,87 +42,23 @@ try:
         data={"chat_id": NOTIF_CHANNEL_ID, "text": "Proses pengunduhan TikTok dimulai."}
     )
 
-    # Read cookies from file
-    with open(COOKIES_FILE, "r") as cookies_file:
-        cookies_content = cookies_file.read()
+    # Your TikTok links and downloading logic goes here...
+    # Example: downloading a TikTok video using yt-dlp
+    tiktok_links = []  # Populate this list with TikTok video links
+    for link in tiktok_links:
+        # Download video
+        subprocess.run(["yt-dlp", link, "-o", f"{VIDEO_DIR}/%(title)s.%(ext)s"])
+        
+        # Log the download in archive.txt
+        with open(ARCHIVE_FILE, 'a') as archive:
+            archive.write(f"Downloaded: {link}\n")
 
-    for TIKTOK_LINK in TIKTOK_LINKS:
-        print(f"Mengunduh video dari: {TIKTOK_LINK}")
-        with open(LOG_FILE, 'a') as log_file:
-            log_file.write(f"Mengunduh video dari: {TIKTOK_LINK}\n")
-
-        # Download video using yt-dlp with download-archive
-        process = subprocess.Popen(
-            ['yt-dlp', TIKTOK_LINK, '--cookies', COOKIES_FILE, '--trim-filenames', '100',
-             '--download-archive', ARCHIVE_FILE,
-             '-o', f"{VIDEO_DIR}/@%(uploader)s - %(id)s.%(ext)s"],
-            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True
-        )
-
-        for line in process.stdout:
-            print(line, end='')  # Print the line to console
-            with open(LOG_FILE, 'a') as log_file:
-                log_file.write(line)
-
-        # Upload video to Telegram
-        print("Mulai mengunggah video ke Telegram...")
-        with open(LOG_FILE, 'a') as log_file:
-            log_file.write("Mulai mengunggah video ke Telegram...\n")
-
-        for video_file in os.listdir(VIDEO_DIR):
-            if video_file.endswith('.mp4'):
-                original_name = video_file
-                uploader, video_id = original_name.split(' - ')[0][1:], original_name.split(' - ')[1].split('.')[0]
-                caption = f"@{uploader} - https://www.tiktok.com/@/video/{video_id}"
-
-                # Notifikasi ke konsol bahwa file sedang diunggah
-                print(f"File {original_name} sedang diunggah ke Telegram...")
-
-                # Rename video file to temp_name1.mp4 (or temp_name2.mp4, etc.)
-                temp_name = f"temp_name{TIKTOK_LINKS.index(TIKTOK_LINK) + 1}.mp4"
-                os.rename(os.path.join(VIDEO_DIR, video_file), os.path.join(VIDEO_DIR, temp_name))
-
-                # Upload video to Telegram
-                with open(os.path.join(VIDEO_DIR, temp_name), 'rb') as video:
-                    response = requests.post(
-                        f"https://api.telegram.org/bot{BOT_TOKEN}/sendVideo",
-                        data={"chat_id": VIDEO_CHANNEL_ID, "caption": caption, "parse_mode": "Markdown"},
-                        files={"video": video}
-                    )
-
-                if response.ok:
-                    # Notifikasi ke konsol bahwa file berhasil diunggah
-                    print(f"File {temp_name} berhasil diunggah ke Telegram.")
-                    with open(LOG_FILE, 'a') as log_file:
-                        log_file.write(f"Upload berhasil. Menghapus {temp_name}...\n")
-                    os.remove(os.path.join(VIDEO_DIR, temp_name))
-                else:
-                    # Notifikasi ke konsol bahwa file gagal diunggah
-                    print(f"File {temp_name} gagal diunggah ke Telegram.")
-                    with open(LOG_FILE, 'a') as log_file:
-                        log_file.write(f"Upload gagal untuk {temp_name}.\n")
-                    requests.post(
-                        f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
-                        data={"chat_id": NOTIF_CHANNEL_ID, "text": f"Upload gagal untuk file: {temp_name}."}
-                    )
-
-                # Menunggu sebelum unggahan berikutnya
-                print("Menunggu selama 3 detik sebelum unggahan berikutnya...")
-                time.sleep(3)
-
-    # Send log file to Telegram
-    with open(LOG_FILE, 'rb') as log_file:
-        requests.post(
-            f"https://api.telegram.org/bot{BOT_TOKEN}/sendDocument",
-            data={"chat_id": NOTIF_CHANNEL_ID, "caption": "Log pengunduhan TikTok"},
-            files={"document": log_file}
-        )
-
-    # Notify end of the process
+    # Notify completion of the process
     requests.post(
         f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
-        data={"chat_id": NOTIF_CHANNEL_ID, "text": "Proses pengunggahan video TikTok selesai."}
+        data={"chat_id": NOTIF_CHANNEL_ID, "text": "Proses pengunduhan TikTok selesai."}
     )
+
 finally:
     # Clean up lock file
     if os.path.exists(LOCK_FILE):
