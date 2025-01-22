@@ -1,0 +1,40 @@
+name: TikTok Downloader
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Runs every hour
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'  # Specify the Python version you want to use
+
+    - name: Install dependencies
+      run: |
+        pip install requests yt-dlp
+
+    - name: Create directories
+      run: |
+        mkdir -p /home/runner/work/tiktok_downloader/videos
+        mkdir -p /home/runner/work/tiktok_downloader/logs
+        mkdir -p /home/runner/work/tiktok_downloader/cookies
+
+    - name: Save cookies to file
+      run: echo "$TT_COOKIES" > /home/runner/work/tiktok_downloader/cookies/cookies.txt
+
+    - name: Run TikTok downloader script
+      run: python /path/to/your/script.py  # Replace with the actual path to your Python script
+
+    - name: Clean up
+      run: |
+        rm -rf /home/runner/work/tiktok_downloader/videos/*
+        rm -rf /home/runner/work/tiktok_downloader/logs/*
+        rm -rf /home/runner/work/tiktok_downloader/cookies/*
