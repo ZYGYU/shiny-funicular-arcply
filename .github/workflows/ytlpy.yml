@@ -77,7 +77,7 @@ jobs:
                 log_file.write(f"Mengunduh video dari: {TIKTOK_LINK}\n")
 
             process = subprocess.Popen(
-                ['yt-dlp', TIKTOK_LINK, '--quiet', '--progress', '--trim-filenames', '100',
+                ['yt-dlp', TIKTOK_LINK, '--skip-download', '--progress', '--trim-filenames', '100',
                 '--download-archive', ARCHIVE_FILE,
                 '--cookies', 'cookies.txt',
                 '-o', f"{VIDEO_DIR}/@%(uploader)s - %(id)s.%(ext)s"],
@@ -141,6 +141,7 @@ jobs:
 
     - name: Commit acpn.txt
       run: |
+        git pull origin master --allow-unrelated-histories
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add acpn.txt
