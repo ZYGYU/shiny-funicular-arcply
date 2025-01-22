@@ -95,7 +95,7 @@ jobs:
                 if video_file.endswith('.mp4'):
                     original_name = video_file
                     uploader, video_id = original_name.split(' - ')[0][1:], original_name.split(' - ')[1].split('.')[0]
-                    caption = f"@{uploader} - https://www.tiktok.com/@/video/{video_id}"
+                    caption = f"#{uploader} - https://www.tiktok.com/@/video/{video_id}"
 
                     print(f"File {original_name} sedang diunggah ke Telegram...")
                     temp_name = f"temp_name{TIKTOK_LINKS.index(TIKTOK_LINK) + 1}.mp4"
