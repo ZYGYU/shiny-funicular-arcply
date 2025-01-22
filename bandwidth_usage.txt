@@ -1,1 +1,1 @@
-Bandwidth Usage All Time: 
+ eth0: No data. Timestamp of last update is same 2025-01-22 09:24:20 as of database creation.
