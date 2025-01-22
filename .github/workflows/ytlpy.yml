@@ -1,12 +1,15 @@
-name: TikTok Downloader
+name: Run TikTok Downloader
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'  # Runs every hour
+    - cron: '0 0 * * *'
+  push:
+    branches:
+      - main
 
 jobs:
-  download:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,26 +17,130 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v2
       with:
-        python-version: '3.8'  # Specify the Python version you want to use
+        python-version: '3.9'
 
     - name: Install dependencies
       run: |
+        python -m pip install --upgrade pip
         pip install requests yt-dlp
 
-    - name: Create directories
+    - name: Set Telegram Secrets and Cookies
       run: |
-        mkdir -p /home/runner/work/tiktok_downloader/videos
-        mkdir -p /home/runner/work/tiktok_downloader/logs
-        mkdir -p /home/runner/work/tiktok_downloader/cookies
-
-    - name: Save cookies to file
-      run: echo "$TT_COOKIES" > /home/runner/work/tiktok_downloader/cookies/cookies.txt
-
-    - name: Run TikTok downloader script
-      run: python acpn.py
+        echo "${{ secrets.TT_COOKIES }}" > cookies.txt
       env:
-       NOTIF_CHANNEL_ID: ${{ secrets.NOTIF_CHANNEL_ID }}
-       VIDEO_CHANNEL_ID: ${{ secrets.VIDEO_CHANNEL_ID }}
-       BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TT_COOKIES: ${{ secrets.TT_COOKIES }}
+
+    - name: Run TikTok Downloader
+      env:
+        VIDEO_DIR: ${{ github.workspace }}/VIDEO/ACPN
+        ARCHIVE_FILE: ${{ github.workspace }}/acpn.txt
+        LOG_FILE: ${{ github.workspace }}/download.log
+        NOTIF_CHANNEL_ID: '-1002471139847'
+        VIDEO_CHANNEL_ID: '-1002237077886'
+        BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TT_COOKIES: ${{ secrets.TT_COOKIES }}
+      run: |
+        mkdir -p $VIDEO_DIR
+        touch $ARCHIVE_FILE
+        touch $LOG_FILE
+        
+        python << 'EOF'
+        import os
+        import subprocess
+        import time
+        import requests
+
+        VIDEO_DIR = os.getenv('VIDEO_DIR')
+        ARCHIVE_FILE = os.getenv('ARCHIVE_FILE')
+        LOG_FILE = os.getenv('LOG_FILE')
+        NOTIF_CHANNEL_ID = os.getenv('NOTIF_CHANNEL_ID')
+        VIDEO_CHANNEL_ID = os.getenv('VIDEO_CHANNEL_ID')
+        BOT_TOKEN = os.getenv('BOT_TOKEN')
+
+        TIKTOK_LINKS = [
+            "https://www.tiktok.com/@aditaher98"
+            # ... tambahkan link TikTok lainnya di sini ...
+        ]
+
+        requests.post(
+            f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+            data={"chat_id": NOTIF_CHANNEL_ID, "text": "Proses pengunduhan TikTok dimulai."}
+        )
+
+        for TIKTOK_LINK in TIKTOK_LINKS:
+            print(f"Mengunduh video dari: {TIKTOK_LINK}")
+            with open(LOG_FILE, 'a') as log_file:
+                log_file.write(f"Mengunduh video dari: {TIKTOK_LINK}\n")
+
+            process = subprocess.Popen(
+                ['yt-dlp', TIKTOK_LINK, '--trim-filenames', '100',
+                '--download-archive', ARCHIVE_FILE,
+                '--cookies', 'cookies.txt',
+                '-o', f"{VIDEO_DIR}/@%(uploader)s - %(id)s.%(ext)s"],
+                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True
+            )
+
+            for line in process.stdout:
+                print(line, end='')
+                with open(LOG_FILE, 'a') as log_file:
+                    log_file.write(line)
+
+            print("Mulai mengunggah video ke Telegram...")
+            with open(LOG_FILE, 'a') as log_file:
+                log_file.write("Mulai mengunggah video ke Telegram...\n")
+
+            for video_file in os.listdir(VIDEO_DIR):
+                if video_file.endswith('.mp4'):
+                    original_name = video_file
+                    uploader, video_id = original_name.split(' - ')[0][1:], original_name.split(' - ')[1].split('.')[0]
+                    caption = f"@{uploader} - https://www.tiktok.com/@/video/{video_id}"
+
+                    print(f"File {original_name} sedang diunggah ke Telegram...")
+                    temp_name = f"temp_name{TIKTOK_LINKS.index(TIKTOK_LINK) + 1}.mp4"
+                    os.rename(os.path.join(VIDEO_DIR, video_file), os.path.join(VIDEO_DIR, temp_name))
+
+                    with open(os.path.join(VIDEO_DIR, temp_name), 'rb') as video:
+                        response = requests.post(
+                            f"https://api.telegram.org/bot{BOT_TOKEN}/sendVideo",
+                            data={"chat_id": VIDEO_CHANNEL_ID, "caption": caption, "parse_mode": "Markdown"},
+                            files={"video": video}
+                        )
+
+                    if response.ok:
+                        print(f"File {temp_name} berhasil diunggah ke Telegram.")
+                        with open(LOG_FILE, 'a') as log_file:
+                            log_file.write(f"Upload berhasil. Menghapus {temp_name}...\n")
+                        os.remove(os.path.join(VIDEO_DIR, temp_name))
+                    else:
+                        print(f"File {temp_name} gagal diunggah ke Telegram.")
+                        with open(LOG_FILE, 'a') as log_file:
+                            log_file.write(f"Upload gagal untuk {temp_name}.\n")
+                        requests.post(
+                            f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+                            data={"chat_id": NOTIF_CHANNEL_ID, "text": f"Upload gagal untuk file: {temp_name}."}
+                        )
+
+                    time.sleep(3)
+
+        with open(LOG_FILE, 'rb') as log_file:
+            requests.post(
+                f"https://api.telegram.org/bot{BOT_TOKEN}/sendDocument",
+                data={"chat_id": NOTIF_CHANNEL_ID, "caption": "Log pengunduhan TikTok"},
+                files={"document": log_file}
+            )
+
+        requests.post(
+            f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+            data={"chat_id": NOTIF_CHANNEL_ID, "text": "Proses pengunggahan video TikTok selesai."}
+        )
+        EOF
+
+    - name: Commit acpn.txt
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add acpn.txt
+        git commit -m 'Update acpn.txt after TikTok uploads'
+        git push
