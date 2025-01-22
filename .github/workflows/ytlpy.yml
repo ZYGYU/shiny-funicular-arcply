@@ -31,7 +31,7 @@ jobs:
       run: echo "$TT_COOKIES" > /home/runner/work/tiktok_downloader/cookies/cookies.txt
 
     - name: Run TikTok downloader script
-      run: python /path/to/your/script.py  # Replace with the actual path to your Python script
+      run: python acpn.py # Replace with the actual path to your Python script
 
     - name: Clean up
       run: |
