@@ -39,7 +39,7 @@ jobs:
 
     - name: Capture Bandwidth Usage
       run: |
-        vnstat --oneline -i eth0 | awk -F ";" '{print "Bandwidth Usage All Time: " $4}' > /tmp/bandwidth_usage.txt
+        vnstat --oneline -i eth0 > /tmp/bandwidth_usage.txt
         cat /tmp/bandwidth_usage.txt
 
     - name: Send Video to Telegram
