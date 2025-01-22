@@ -130,14 +130,7 @@ jobs:
         with open(LOG_FILE, 'rb') as log_file:
             requests.post(
                 f"https://api.telegram.org/bot{BOT_TOKEN}/sendDocument",
-                data={"chat_id": NOTIF_CHANNEL_ID, "caption": "Log pengunduhan TikTok"},
-                files={"document": log_file}
-            )
-
-            with open(LOG_FILE, 'rb') as log_file:
-            requests.post(
-                f"https://api.telegram.org/bot{BOT_TOKEN}/sendDocument",
-                data={"chat_id": NOTIF_CHANNEL_ID, "caption": "Archive pengunduhan TikTok"},
+                data={"chat_id": NOTIF_CHANNEL_ID, "caption": "Arsip pengunduhan TikTok"},
                 files={"document": archive_file}
             )
 
