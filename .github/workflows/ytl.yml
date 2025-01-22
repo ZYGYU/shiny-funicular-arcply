@@ -19,7 +19,7 @@ jobs:
     - name: Install Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y yt-dlp vnstat
+        sudo apt-get install -y yt-dlp
 
     - name: Save Cookies to File
       env:
