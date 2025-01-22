@@ -33,24 +33,46 @@ jobs:
       run: |
         yt-dlp -v --cookies cookies.txt -o '/tmp/video.mp4' "$TIKTOK_URL"
 
-    - name: Capture Bandwidth Usage with ifconfig
+    - name: Capture and Update Bandwidth Usage
       run: |
-       # Replace eth0 with your network interface name
+       # Define file path for storing cumulative bandwidth usage
+       BANDWIDTH_FILE="bandwidth_usage.txt"
+
+       # Extract current RX and TX data from ifconfig
        RX=$(ifconfig eth0 | grep 'RX packets' | awk '{print $5}')  # Received bytes
        TX=$(ifconfig eth0 | grep 'TX packets' | awk '{print $5}')  # Transmitted bytes
+       RX_MB=$(echo "$RX / 1048576" | bc)  # Convert to MB
+       TX_MB=$(echo "$TX / 1048576" | bc)  # Convert to MB
+  
+       # Initialize cumulative variables
+       TOTAL_RX=$RX_MB
+       TOTAL_TX=$TX_MB
 
-       # Convert bytes to MB
-       RX_MB=$(echo "$RX / 1048576" | bc)
-       TX_MB=$(echo "$TX / 1048576" | bc)
+       # If a previous file exists, read its data
+       if [ -f "$BANDWIDTH_FILE" ]; then
+         PREV_RX=$(grep "Received" "$BANDWIDTH_FILE" | awk '{print $2}')  # Extract previous RX
+         PREV_TX=$(grep "Transmitted" "$BANDWIDTH_FILE" | awk '{print $2}')  # Extract previous TX
 
-       # Log the usage
-       echo "Bandwidth Usage All Time:" > /tmp/bandwidth_usage.txt
-       echo "  Received: $RX_MB MB" >> /tmp/bandwidth_usage.txt
-       echo "  Transmitted: $TX_MB MB" >> /tmp/bandwidth_usage.txt
+       # Add previous data to current data
+        TOTAL_RX=$(echo "$PREV_RX + $RX_MB" | bc)
+        TOTAL_TX=$(echo "$PREV_TX + $TX_MB" | bc)
+       fi
 
-       # Display the log
-       cat /tmp/bandwidth_usage.txt
+       # Save the updated data back to the file
+       echo "Bandwidth Usage All Time:" > "$BANDWIDTH_FILE"
+       echo "  Received: $TOTAL_RX MB" >> "$BANDWIDTH_FILE"
+       echo "  Transmitted: $TOTAL_TX MB" >> "$BANDWIDTH_FILE"
 
+       # Display the updated data
+       cat "$BANDWIDTH_FILE"
+
+       # Commit the updated data to the repository
+       git config --local user.name "github-actions"
+       git config --local user.email "action@github.com"
+       git add "$BANDWIDTH_FILE"
+       git commit -m "Update cumulative bandwidth usage"
+       git push
+       
     - name: Send Video to Telegram
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -59,11 +81,4 @@ jobs:
         curl -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendVideo" \
         -F chat_id=$TELEGRAM_CHAT_ID -F video=@/tmp/video.mp4
 
-    - name: Commit Bandwidth Usage to Repository
-      run: |
-        git config --local user.name "github-actions"
-        git config --local user.email "action@github.com"
-        mv /tmp/bandwidth_usage.txt ./bandwidth_usage.txt
-        git add bandwidth_usage.txt
-        git commit -m "Add bandwidth usage report"
-        git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+    
