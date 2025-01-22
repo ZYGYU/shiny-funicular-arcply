@@ -3,46 +3,56 @@ name: Download TikTok and Send to Telegram
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 17 * * *'  # Menjalankan setiap hari pada pukul 17:00 UTC
+    - cron: '0 17 * * *'  # Runs daily at 17:00 UTC
+
+permissions:
+  contents: write
 
 jobs:
   download-and-send:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Install Dependencies
       run: |
-        sudo apt-get install -y yt-dlp  # Menggunakan yt-dlp untuk mengunduh video
-        sudo apt-get install -y nload #Menginstall nload untuk memonitor bandwidth
+        sudo apt-get update
+        sudo apt-get install -y yt-dlp vnstat
+
+    - name: Save Cookies to File
+      env:
+        TT_COOKIES: ${{ secrets.TT_COOKIES }}
+      run: |
+        echo "$TT_COOKIES" > cookies.txt
 
     - name: Monitor Bandwidth Before Download
       id: start_bandwidth
       run: |
-        nload -t 1 -o /tmp/bandwidth.log &
-        sleep 5
+        vnstat -tr 10 > /tmp/bandwidth_before.log
 
     - name: Download TikTok Video
       env:
-        TT_COOKIES: ${{ SECRET.TT_COOKIES }}
-        TIKTOK_URL: 'https://www.tiktok.com/@user/video/7458204807241731335'  # Ganti dengan URL TikTok
+        TIKTOK_URL: 'https://www.tiktok.com/@user/video/7458204807241731335'  # Keep this link
       run: |
-        yt-dlp -v --cookies ${{ SECRET.TT_COOKIES}} -o '/tmp/video.mp4' "$TIKTOK_URL"
+        yt-dlp -v --cookies cookies.txt -o '/tmp/video.mp4' "$TIKTOK_URL"
 
     - name: Monitor Bandwidth After Download
       run: |
-        kill $(jobs -p)  # Menghentikan proses nload
-        echo "Bandwidth Usage:" >> /tmp/bandwidth.log
-        cat /tmp/bandwidth.log >> /tmp/bandwidth_usage.txt
+        vnstat -tr 10 > /tmp/bandwidth_after.log
+        echo "Bandwidth Usage Before:" >> /tmp/bandwidth_usage.txt
+        cat /tmp/bandwidth_before.log >> /tmp/bandwidth_usage.txt
+        echo "Bandwidth Usage After:" >> /tmp/bandwidth_usage.txt
+        cat /tmp/bandwidth_after.log >> /tmp/bandwidth_usage.txt
 
     - name: Send Video to Telegram
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
-        curl -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendVideo" -F chat_id=$TELEGRAM_CHAT_ID -F video=@/tmp/video.mp4
+        curl -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendVideo" \
+        -F chat_id=$TELEGRAM_CHAT_ID -F video=@/tmp/video.mp4
 
     - name: Commit Bandwidth Usage to Repository
       run: |
@@ -51,4 +61,4 @@ jobs:
         mv /tmp/bandwidth_usage.txt ./bandwidth_usage.txt
         git add bandwidth_usage.txt
         git commit -m "Add bandwidth usage report"
-        git push
+        git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
