@@ -126,7 +126,7 @@ jobs:
                 '--download-archive', ARCHIVE_FILE,
                 '--cookies', 'cookies.txt',
                 '-o', f"{VIDEO_DIR}/@%(uploader)s - %(id)s.%(ext)s"],
-                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=False
+                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True
             )
 
             for line in process.stdout:
