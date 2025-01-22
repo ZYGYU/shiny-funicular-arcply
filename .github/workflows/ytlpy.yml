@@ -3,7 +3,7 @@ name: Run TikTok Downloader
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '6 * * * *'
   push:
     branches:
       - main
@@ -62,7 +62,8 @@ jobs:
         TIKTOK_LINKS = [
           "https://www.tiktok.com/@iiiqish",
           "https://www.tiktok.com/@notstarlaaa",
-          "https://www.tiktok.com/@urstarlaa0"
+          "https://www.tiktok.com/@urstarlaa0",
+          "https://www.tiktok.com/@twingklingstarla"
         ]
 
         requests.post(
