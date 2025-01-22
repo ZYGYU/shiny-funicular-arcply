@@ -21,30 +21,29 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y yt-dlp vnstat
 
+    - name: Reset Bandwidth Statistics
+      run: |
+        sudo vnstat --reset -i eth0  # Replace eth0 with the appropriate interface (e.g., ens33, wlan0)
+
     - name: Save Cookies to File
       env:
         TT_COOKIES: ${{ secrets.TT_COOKIES }}
       run: |
         echo "$TT_COOKIES" > cookies.txt
 
-    - name: Monitor Bandwidth Before Download
-      id: start_bandwidth
-      run: |
-        vnstat -tr 10 > /tmp/bandwidth_before.log
-
     - name: Download TikTok Video
       env:
-        TIKTOK_URL: 'https://www.tiktok.com/@user/video/7458204807241731335'  # Keep this link
+        TIKTOK_URL: 'https://www.tiktok.com/@user/video/7458204807241731335'
       run: |
         yt-dlp -v --cookies cookies.txt -o '/tmp/video.mp4' "$TIKTOK_URL"
 
-    - name: Monitor Bandwidth After Download
+    - name: Capture Bandwidth Usage
       run: |
-        vnstat -tr 10 > /tmp/bandwidth_after.log
-        echo "Bandwidth Usage Before:" >> /tmp/bandwidth_usage.txt
-        cat /tmp/bandwidth_before.log >> /tmp/bandwidth_usage.txt
-        echo "Bandwidth Usage After:" >> /tmp/bandwidth_usage.txt
-        cat /tmp/bandwidth_after.log >> /tmp/bandwidth_usage.txt
+        # Capture session usage
+        vnstat --oneline -i eth0 | awk -F ";" '{print "Bandwidth Usage This Session: " $7}' > /tmp/bandwidth_usage.txt
+        # Capture total usage
+        vnstat --oneline -i eth0 | awk -F ";" '{print "Bandwidth Usage All Time: " $4}' >> /tmp/bandwidth_usage.txt
+        cat /tmp/bandwidth_usage.txt
 
     - name: Send Video to Telegram
       env:
