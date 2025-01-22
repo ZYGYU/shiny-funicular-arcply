@@ -1,14 +1,1 @@
-Bandwidth Usage Before:
-Sampling eth0 (10 seconds average)...[1G[2K215 packets sampled in 10 seconds
-Traffic average for eth0
-
-      rx        20.74 kbit/s            10 packets/s
-      tx       174.43 kbit/s            11 packets/s
-
-Bandwidth Usage After:
-Sampling eth0 (10 seconds average)...[1G[2K131 packets sampled in 10 seconds
-Traffic average for eth0
-
-      rx        14.71 kbit/s             6 packets/s
-      tx        41.45 kbit/s             7 packets/s
-
+Bandwidth Usage All Time: 
