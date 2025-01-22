@@ -32,10 +32,8 @@ jobs:
       run: echo "$TT_COOKIES" > /home/runner/work/tiktok_downloader/cookies/cookies.txt
 
     - name: Run TikTok downloader script
-      run: python acpn.py # Replace with the actual path to your Python script
-
-    - name: Clean up
-      run: |
-        rm -rf /home/runner/work/tiktok_downloader/videos/*
-        rm -rf /home/runner/work/tiktok_downloader/logs/*
-        rm -rf /home/runner/work/tiktok_downloader/cookies/*
+      run: python acpn.py
+      env:
+       NOTIF_CHANNEL_ID: ${{ secrets.NOTIF_CHANNEL_ID }}
+       VIDEO_CHANNEL_ID: ${{ secrets.VIDEO_CHANNEL_ID }}
+       BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
