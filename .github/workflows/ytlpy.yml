@@ -32,6 +32,12 @@ jobs:
           echo "${{ secrets.TT_COOKIES }}" > cookies.txt
         env:
           TT_COOKIES: ${{ secrets.TT_COOKIES }}      
+
+      - name: Load Rclone Config from Secret
+        run: |
+          echo "$RCLONE_CONF_BASE64" | base64 --decode > rclone.conf
+        env:
+          RCLONE_CONF_BASE64: ${{ secrets.RCLONE_CONF_BASE64 }}
           
       # Langkah 4: Jalankan script Python
       - name: Run TikTok Downloader
