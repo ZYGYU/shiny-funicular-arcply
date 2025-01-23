@@ -4,9 +4,9 @@ import time
 import requests
 
 # Direktori untuk menyimpan video
-VIDEO_DIR = os.getenv('VIDEO_DIR', './videos')
-ARCHIVE_FILE = os.getenv('ARCHIVE_FILE', './archive.txt')
-LOG_FILE = os.getenv('LOG_FILE', './download.log')
+VIDEO_DIR = os.getenv('VIDEO_DIR', 'videos')
+ARCHIVE_FILE = os.getenv('ARCHIVE_FILE', 'archive.txt')
+LOG_FILE = os.getenv('LOG_FILE', 'download.log')
 NOTIF_CHANNEL_ID = os.getenv('NOTIF_CHANNEL_ID', '-1002471139847')  # ID channel notifikasi
 VIDEO_CHANNEL_ID = os.getenv('VIDEO_CHANNEL_ID', '-1002357695125')  # ID channel video
 BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')  # Token bot Telegram
