@@ -37,12 +37,12 @@ jobs:
       - name: Run TikTok Downloader
         env:
           VIDEO_DIR: './videos'
-          ARCHIVE_FILE: './downloaded.txt'
+          ARCHIVE_FILE: './archive.txt'
           LOG_FILE: './download.log'
           NOTIF_CHANNEL_ID: '-1002471139847'  # Ganti dengan ID channel notifikasi
           VIDEO_CHANNEL_ID: '-1002357695125'  # Ganti dengan ID channel video
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}  # Token bot Telegram (gunakan GitHub Secrets)
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}  # Token bot Telegram (gunakan GitHub Secrets)
           TT_COOKIES: ${{ secrets.TT_COOKIES }}  # Cookies TikTok (gunakan GitHub Secrets)
         run: |
-          mkdir -p ./videos
+          sudo mkdir -p ./videos
           python main.py
