@@ -48,3 +48,13 @@ jobs:
           touch $ARCHIVE_FILE
           touch $LOG_FILE
           python main.py
+
+      - name: Push Acpn
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git pull origin main
+          git add acpn.txt
+          git commit -m 'Update acpn.txt after TikTok uploads'
+          git push origin main
+
