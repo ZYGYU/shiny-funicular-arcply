@@ -29,10 +29,10 @@ jobs:
           
       - name: Set Telegram Secrets and Cookies
         run: |
-         echo "${{ secrets.TT_COOKIES }}" > cookies.txt
-         env:
-          TT_COOKIES: ${{ secrets.TT_COOKIES }}
-
+          echo "${{ secrets.TT_COOKIES }}" > cookies.txt
+        env:
+          TT_COOKIES: ${{ secrets.TT_COOKIES }}      
+          
       # Langkah 4: Jalankan script Python
       - name: Run TikTok Downloader
         env:
