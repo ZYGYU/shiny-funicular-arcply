@@ -44,5 +44,4 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}  # Token bot Telegram (gunakan GitHub Secrets)
           TT_COOKIES: ${{ secrets.TT_COOKIES }}  # Cookies TikTok (gunakan GitHub Secrets)
         run: |
-          sudo mkdir -p ./videos
           python main.py
