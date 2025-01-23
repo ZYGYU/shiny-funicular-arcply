@@ -37,7 +37,7 @@ jobs:
       - name: Run TikTok Downloader
         env:
           VIDEO_DIR: ${{ github.workspace }}/VIDEO/ACPN
-          ARCHIVE_FILE: ${{ github.workspace }}/archive.txt
+          ARCHIVE_FILE: ${{ github.workspace }}/acpn.txt
           LOG_FILE: ${{ github.workspace }}/download.log
           NOTIF_CHANNEL_ID: '-1002471139847'  # Ganti dengan ID channel notifikasi
           VIDEO_CHANNEL_ID: '-1002357695125'  # Ganti dengan ID channel video
