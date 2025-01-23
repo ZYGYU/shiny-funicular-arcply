@@ -55,7 +55,7 @@ for TIKTOK_LINK in TIKTOK_LINKS:
     subprocess.run([
         'yt-dlp', TIKTOK_LINK, '--quiet', '--progress', '--trim-filenames', '100',
         '--download-archive', ARCHIVE_FILE,
-        '--cookies', TT_COOKIES,
+        '--cookies', 'cookies.txt',
         '-o', f"{VIDEO_DIR}/@%(uploader)s - %(id)s.%(ext)s"
     ])
 
