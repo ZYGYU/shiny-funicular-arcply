@@ -1,145 +1,48 @@
-    - name: Run TikTok Downloader
-      env:
-        VIDEO_DIR: ${{ github.workspace }}/VIDEO/ACPN
-        ARCHIVE_FILE: ${{ github.workspace }}/acpn.txt
-        LOG_FILE: ${{ github.workspace }}/download.log
-        NOTIF_CHANNEL_ID: '-1002471139847'
-        VIDEO_CHANNEL_ID: '-1002357695125'
-        BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TT_COOKIES: ${{ secrets.TT_COOKIES }}
-      run: |
-        mkdir -p $VIDEO_DIR
-        touch $ARCHIVE_FILE
-        touch $LOG_FILE
-        
-        python << 'EOF'
-import os
-import subprocess
-import time
-import requests
+name: TikTok Downloader
 
-VIDEO_DIR = os.getenv('VIDEO_DIR')
-ARCHIVE_FILE = os.getenv('ARCHIVE_FILE')
-LOG_FILE = os.getenv('LOG_FILE')
-NOTIF_CHANNEL_ID = os.getenv('NOTIF_CHANNEL_ID')
-VIDEO_CHANNEL_ID = os.getenv('VIDEO_CHANNEL_ID')
-BOT_TOKEN = os.getenv('BOT_TOKEN')
+on:
+  workflow_dispatch: # Jalankan manual
+  schedule:
+    - cron: "0 12 * * *" # Jadwal (Setiap hari pukul 12:00 UTC)
 
-TIKTOK_LINKS = [
-    "https://www.tiktok.com/@iiiqish",
-    "https://www.tiktok.com/@notstarlaaa",
-    "https://www.tiktok.com/@urstarlaa0",
-    "https://www.tiktok.com/@twingklingstarla",
-    "https://www.tiktok.com/@iiiqish0"
-]
+jobs:
+  download_tiktok:
+    runs-on: ubuntu-latest
 
-# Send Telegram notification
-requests.post(
-    f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
-    data={"chat_id": NOTIF_CHANNEL_ID, "text": "Proses pengunduhan TikTok dimulai."}
-)
+    steps:
+      # Langkah 1: Checkout repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-# Download and process videos
-for TIKTOK_LINK in TIKTOK_LINKS:
-    print(f"Mengunduh video dari: {TIKTOK_LINK}")
-    with open(LOG_FILE, 'a') as log_file:
-        log_file.write(f"Mengunduh video dari: {TIKTOK_LINK}\n")
+      # Langkah 2: Setup Python
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
 
-    process = subprocess.Popen(
-        ['yt-dlp', TIKTOK_LINK, '--quiet', '--progress', '--trim-filenames', '100',
-        '--download-archive', ARCHIVE_FILE,
-        '--cookies', 'cookies.txt',
-        '-o', f"{VIDEO_DIR}/@%(uploader)s - %(id)s.%(ext)s"],
-        stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True
-    )
+      # Langkah 3: Install dependencies
+      - name: Install Dependencies
+        run: |
+          pip install requests yt-dlp
+          sudo apt-get update
+          sudo apt-get install -y rclone
+          
+      - name: Set Telegram Secrets and Cookies
+        run: |
+         echo "${{ secrets.TT_COOKIES }}" > cookies.txt
+         env:
+          TT_COOKIES: ${{ secrets.TT_COOKIES }}
 
-    for line in process.stdout:
-        print(line, end='')
-        with open(LOG_FILE, 'a') as log_file:
-            log_file.write(line)
-
-    # Upload to Telegram or Rclone
-    print("Mulai mengunggah video ke Telegram...")
-    with open(LOG_FILE, 'a') as log_file:
-        log_file.write("Mulai mengunggah video ke Telegram...\n")
-
-    for video_file in os.listdir(VIDEO_DIR):
-        if video_file.endswith('.mp4'):
-            original_name = video_file
-            uploader, video_id = original_name.split(' - ')[0][1:], original_name.split(' - ')[1].split('.')[0]
-            caption = f"#{uploader} - https://www.tiktok.com/@/video/{video_id}"
-
-            print(f"File {original_name} sedang diunggah ke Telegram...")
-            temp_name = f"temp_name{TIKTOK_LINKS.index(TIKTOK_LINK) + 1}.mp4"
-            os.rename(os.path.join(VIDEO_DIR, video_file), os.path.join(VIDEO_DIR, temp_name))
-
-            retries = 3
-            success = False
-
-            # Retry upload to Telegram
-            for attempt in range(retries):
-                with open(os.path.join(VIDEO_DIR, temp_name), 'rb') as video:
-                    response = requests.post(
-                        f"https://api.telegram.org/bot{BOT_TOKEN}/sendVideo",
-                        data={"chat_id": VIDEO_CHANNEL_ID, "caption": caption, "parse_mode": "Markdown"},
-                        files={"video": video}
-                    )
-
-                if response.ok:
-                    print(f"File {temp_name} berhasil diunggah ke Telegram.")
-                    with open(LOG_FILE, 'a') as log_file:
-                        log_file.write(f"Upload berhasil. Menghapus {temp_name}...\n")
-                    os.remove(os.path.join(VIDEO_DIR, temp_name))
-                    success = True
-                    break
-                else:
-                    print(f"Upload gagal untuk {temp_name}. Mencoba lagi ({attempt + 1}/{retries})...")
-                    with open(LOG_FILE, 'a') as log_file:
-                        log_file.write(f"Upload gagal untuk {temp_name}. Retry {attempt + 1}/{retries}.\n")
-                    time.sleep(5)
-
-            # Fallback to Rclone if Telegram upload fails
-            if not success:
-                print(f"Gagal upload ke Telegram, mencoba upload ke Rclone...")
-                with open(LOG_FILE, 'a') as log_file:
-                    log_file.write(f"Upload ke Telegram gagal untuk {temp_name}. Mencoba upload ke Rclone...\n")
-
-                rclone_command = [
-                    'rclone', 'move', os.path.join(VIDEO_DIR, temp_name),
-                    'da:TikTok/Failed/', '--quiet', '--progress'
-                ]
-                rclone_result = subprocess.run(rclone_command, capture_output=True, text=True)
-
-                if rclone_result.returncode == 0:
-                    print(f"File {temp_name} berhasil diunggah ke Rclone.")
-                    with open(LOG_FILE, 'a') as log_file:
-                        log_file.write(f"Upload ke Rclone berhasil untuk {temp_name}.\n")
-                else:
-                    print(f"Upload ke Rclone gagal untuk {temp_name}. Video dilewati.")
-                    with open(LOG_FILE, 'a') as log_file:
-                        log_file.write(f"Upload ke Rclone gagal untuk {temp_name}. Video dilewati.\n")
-
-# Send log to Telegram
-with open(LOG_FILE, 'rb') as log_file:
-    requests.post(
-        f"https://api.telegram.org/bot{BOT_TOKEN}/sendDocument",
-        data={"chat_id": NOTIF_CHANNEL_ID, "caption": "Arsip pengunduhan TikTok"},
-        files={"document": log_file}
-    )
-
-# Final notification
-requests.post(
-    f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
-    data={"chat_id": NOTIF_CHANNEL_ID, "text": "Proses pengunggahan video TikTok selesai."}
-)
-EOF
-
-
-    - name: Commit acpn.txt
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git pull origin main --allow-unrelated-histories
-        git add acpn.txt
-        git commit -m 'Update acpn.txt after TikTok uploads'
-        git push origin main
+      # Langkah 4: Jalankan script Python
+      - name: Run TikTok Downloader
+        env:
+          VIDEO_DIR: './videos'
+          ARCHIVE_FILE: './downloaded.txt'
+          LOG_FILE: './download.log'
+          NOTIF_CHANNEL_ID: '-1002471139847'  # Ganti dengan ID channel notifikasi
+          VIDEO_CHANNEL_ID: '-1002357695125'  # Ganti dengan ID channel video
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}  # Token bot Telegram (gunakan GitHub Secrets)
+          TT_COOKIES: ${{ secrets.TT_COOKIES }}  # Cookies TikTok (gunakan GitHub Secrets)
+        run: |
+          mkdir -p ./videos
+          python main.py
