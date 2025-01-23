@@ -36,12 +36,15 @@ jobs:
       # Langkah 4: Jalankan script Python
       - name: Run TikTok Downloader
         env:
-          VIDEO_DIR: './videos'
-          ARCHIVE_FILE: './archive.txt'
-          LOG_FILE: './download.log'
+          VIDEO_DIR: ${{ github.workspace }}/VIDEO/ACPN
+          ARCHIVE_FILE: ${{ github.workspace }}/archive.txt
+          LOG_FILE: ${{ github.workspace }}/download.log
           NOTIF_CHANNEL_ID: '-1002471139847'  # Ganti dengan ID channel notifikasi
           VIDEO_CHANNEL_ID: '-1002357695125'  # Ganti dengan ID channel video
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}  # Token bot Telegram (gunakan GitHub Secrets)
           TT_COOKIES: ${{ secrets.TT_COOKIES }}  # Cookies TikTok (gunakan GitHub Secrets)
         run: |
+          mkdir -p $VIDEO_DIR
+          touch $ARCHIVE_FILE
+          touch $LOG_FILE
           python main.py
