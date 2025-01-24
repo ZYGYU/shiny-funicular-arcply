@@ -3,7 +3,7 @@ name: TikTok Downloader
 on:
   workflow_dispatch: # Jalankan manual
   schedule:
-    - cron: "0 12 * * *" # Jadwal (Setiap hari pukul 12:00 UTC)
+    - cron: "*/120 * * * *" # Jadwal (Setiap hari pukul 12:00 UTC)
 
 jobs:
   download_tiktok:
