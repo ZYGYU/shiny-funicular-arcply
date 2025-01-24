@@ -18,7 +18,9 @@ TIKTOK_LINKS = [
     "https://www.tiktok.com/@notstarlaaa",
     "https://www.tiktok.com/@urstarlaa0",
     "https://www.tiktok.com/@twingklingstarla",
-    "https://www.tiktok.com/@iiiqish0"
+    "https://www.tiktok.com/@iiiqish0",
+    "https://www.tiktok.com/@ejahazel",
+    "https://www.tiktok.com/@ejahazel11"
 ]
 
 # Membuat direktori dan file yang diperlukan
