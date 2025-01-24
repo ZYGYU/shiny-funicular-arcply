@@ -35,9 +35,9 @@ jobs:
 
       - name: Load Rclone Config from Secret
         run: |
-          echo "$RCLONE_CONF_BASE64" | base64 --decode > rclone.conf
+          wget "$RCLONE_CONFIG" > rclone.conf
         env:
-          RCLONE_CONF_BASE64: ${{ secrets.RCLONE_CONF_BASE64 }}
+          RCLONE_CONFIG: ${{ secrets.RCLONE_CONFIG }}
           
       # Langkah 4: Jalankan script Python
       - name: Run TikTok Downloader
