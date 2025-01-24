@@ -49,7 +49,8 @@ TIKTOK_LINKS = [
     "https://www.tiktok.com/@iinitokyolagieklusif",
     "https://www.tiktok.com/@shervara12",
     "https://www.tiktok.com/@ineedsomeonetotalk0",
-    "https://www.tiktok.com/@epongg303030"
+    "https://www.tiktok.com/@epongg303030",
+    "https://www.tiktok.com/@luenaa.c"
 ]
 
 # Membuat direktori dan file yang diperlukan
@@ -106,7 +107,7 @@ for TIKTOK_LINK in TIKTOK_LINKS:
                 # Fallback: Mengunggah ke Rclone jika Telegram gagal
                 rclone_command = [
                     'rclone', 'move', os.path.join(VIDEO_DIR, video_file),
-                    'mg:TikTok/Failed/', '-v', '--progress', '--config rclone.conf'
+                    'b2:Kodi-Media/Movies/', '-v', '--progress', '--config rclone.conf'
                 ]
                 rclone_result = subprocess.run(rclone_command, capture_output=True, text=True)
                 if rclone_result.returncode == 0:
