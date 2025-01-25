@@ -34,7 +34,7 @@ TIKTOK_LINKS = [
     "https://www.tiktok.com/@shervara12",
     "https://www.tiktok.com/@quynhka704",
     "https://www.tiktok.com/@jakepapho.69",
-    "https://www.tiktok.com/@gxgoidoe",
+    "https://www.tiktok.com/@cupita19",
     "https://www.tiktok.com/@itstobrut",
     "https://www.tiktok.com/@bonjur12z",
     "https://www.tiktok.com/@kumpulantobrutt8",
