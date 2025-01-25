@@ -35,7 +35,7 @@ jobs:
 
       - name: Load Rclone Config from Secret
         run: |
-          wget "$RCLONE_CONFIG" > rclone.conf
+          wget "$RCLONE_CONFIG" > rclone.config
         env:
           RCLONE_CONFIG: ${{ secrets.RCLONE_CONFIG }}
           
