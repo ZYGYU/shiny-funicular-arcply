@@ -107,7 +107,7 @@ for TIKTOK_LINK in TIKTOK_LINKS:
                 # Fallback: Mengunggah ke Rclone jika Telegram gagal
                 subprocess.run( rclone_command = [
                     'rclone', 'move', os.path.join(VIDEO_DIR, video_file),
-                    'b2:Kodi-Media/Movies/', '-v', '--progress', '--config rclone.config'
+                    'b2:Kodi-Media/Movies/', '-v', '--progress', '--config rclone.conf'
                 ])
                 rclone_result = subprocess.run(rclone_command, capture_output=True, text=True)
                 if rclone_result.returncode == 0:
