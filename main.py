@@ -25,7 +25,7 @@ TIKTOK_LINKS = [
     "https://www.tiktok.com/@sususegar.id",
     "https://www.tiktok.com/@donquixote.rosinante86",
     "https://www.tiktok.com/@deyk52",
-    "https://www.tiktok.com/@hijabpulen",
+    "https://www.tiktok.com/@wasawho",
     "https://www.tiktok.com/@favoritsusu",
     "https://www.tiktok.com/@gelotrends",
     "https://www.tiktok.com/@ini.loh3",
