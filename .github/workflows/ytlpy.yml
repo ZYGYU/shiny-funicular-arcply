@@ -56,6 +56,8 @@ jobs:
           python main.py
 
       - name: Rclone Fallback
+        env: 
+          VIDEO_DIR: ${{ github.workspace }}/VIDEO/ACPN
         run: |
           rclone copy "$VIDEO_DIR" mg:Failed/ -v --progress --config rclone.conf
 
