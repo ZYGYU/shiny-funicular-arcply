@@ -46,7 +46,7 @@ jobs:
           ARCHIVE_FILE: ${{ github.workspace }}/acpn.txt
           LOG_FILE: ${{ github.workspace }}/download.log
           NOTIF_CHANNEL_ID: '-1002471139847'  # Ganti dengan ID channel notifikasi
-          VIDEO_CHANNEL_ID: '-1002357695125'  # Ganti dengan ID channel video
+          VIDEO_CHANNEL_ID: '-1002355638424'  # Ganti dengan ID channel video
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}  # Token bot Telegram (gunakan GitHub Secrets)
           TT_COOKIES: ${{ secrets.TT_COOKIES }}  # Cookies TikTok (gunakan GitHub Secrets)
         run: |
