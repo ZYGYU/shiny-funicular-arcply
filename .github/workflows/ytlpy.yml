@@ -55,6 +55,10 @@ jobs:
           touch $LOG_FILE
           python main.py
 
+      - name: Rclone Fallback
+        run: |
+          rclone copy "$VIDEO_DIR" mg:Failed/ -v --progress --config rclone.conf
+
       - name: Push Acpn
         run: |
           git config --global user.name 'github-actions[bot]'
