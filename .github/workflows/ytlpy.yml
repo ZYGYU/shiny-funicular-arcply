@@ -61,6 +61,15 @@ jobs:
         run: |
           rclone copy "$VIDEO_DIR" mg:Failed/ -v --progress --config rclone.conf
 
+      - name: Push Acpn
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git pull origin main
+          git add acpn.txt
+          git commit -m 'Update acpn.txt after TikTok uploads'
+          git push origin main
+
       - name: Capture and Update Bandwidth Usage
         run: |
           # Define file path for storing cumulative bandwidth usage
@@ -106,16 +115,7 @@ jobs:
           # Commit the updated data to the repository
           git config --local user.name "github-actions"
           git config --local user.email "action@github.com"
+          git pull
           git add "$BANDWIDTH_FILE"
           git commit -m "Update cumulative bandwidth usage"
           git push
-
-      - name: Push Acpn
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git pull origin main
-          git add acpn.txt
-          git commit -m 'Update acpn.txt after TikTok uploads'
-          git push origin main
-
