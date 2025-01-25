@@ -85,7 +85,7 @@ for TIKTOK_LINK in TIKTOK_LINKS:
         log_file.write(f"Mengunduh video dari: {TIKTOK_LINK}\n")
 
     subprocess.run([
-        'yt-dlp', TIKTOK_LINK, '--quiet', '--progress', '--progress-template "Downloading: %(filename)s"', '--trim-filenames', '100',
+        'yt-dlp', TIKTOK_LINK, '--quiet', '--progress', '--progress-template "download-title:%(progress.eta)s"', '--trim-filenames', '100',
         '--download-archive', ARCHIVE_FILE,
         '--cookies', 'cookies.txt',
         '-o', f"{VIDEO_DIR}/@%(uploader)s - %(id)s.%(ext)s"
