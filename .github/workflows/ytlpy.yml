@@ -59,7 +59,7 @@ jobs:
         env: 
           VIDEO_DIR: ${{ github.workspace }}/VIDEO/ACPN
         run: |
-          rclone copy "$VIDEO_DIR" mg:Failed/ -v --progress --config rclone.conf
+          rclone copy "$VIDEO_DIR" pc:TikTok/Fallback/ -v --progress --config rclone.conf
 
       - name: Push Acpn
         run: |
