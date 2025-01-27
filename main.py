@@ -30,7 +30,7 @@ TIKTOK_LINKS = [
     "https://www.tiktok.com/@amnddiah_",
     "https://www.tiktok.com/@vicidior9051",
     "https://www.tiktok.com/@fypcewek1",
-    "https://www.tiktok.com/@alvinfcwpj9",
+    "https://www.tiktok.com/@nasy4as",
     "https://www.tiktok.com/@shervara12",
     "https://www.tiktok.com/@quynhka704",
     "https://www.tiktok.com/@jakepapho.69",
@@ -38,7 +38,7 @@ TIKTOK_LINKS = [
     "https://www.tiktok.com/@itstobrut",
     "https://www.tiktok.com/@bonjur12z",
     "https://www.tiktok.com/@kumpulantobrutt8",
-    "https://www.tiktok.com/@fyp_favorite8",
+    "https://www.tiktok.com/@erikaputrealll",
     "https://www.tiktok.com/@thaomyaaaa",
     "https://www.tiktok.com/@awwmantapx69",
     "https://www.tiktok.com/@awwmantappx69",
@@ -47,7 +47,7 @@ TIKTOK_LINKS = [
     "https://www.tiktok.com/@body_manhwa",
     "https://www.tiktok.com/@geolgeol",
     "https://www.tiktok.com/@iinitokyolagieklusif",
-    "https://www.tiktok.com/@shervara12",
+    "https://www.tiktok.com/@sellynses_",
     "https://www.tiktok.com/@ineedsomeonetotalk0",
     "https://www.tiktok.com/@epongg303030",
     "https://www.tiktok.com/@luenaa.c",
@@ -86,7 +86,7 @@ for TIKTOK_LINK in TIKTOK_LINKS:
         log_file.write(f"Mengunduh video dari: {TIKTOK_LINK}\n")
 
     subprocess.run([
-        'yt-dlp', TIKTOK_LINK, '--quiet', '--no-abort-on-error', '--ignore-errors', '--progress', '--trim-filenames', '150',
+        'yt-dlp', TIKTOK_LINK, '--no-abort-on-error', '--ignore-errors', '--progress', '--trim-filenames', '150',
         '--download-archive', ARCHIVE_FILE,
         '--cookies', 'cookies.txt',
         '-o', f"{VIDEO_DIR}/@%(uploader)s - %(id)s.%(ext)s"
